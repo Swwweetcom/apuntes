@@ -1,0 +1,566 @@
+---
+title: Apuntes de desarrollo web - HTML, CSS y JS
+description:
+---
+
+<div class="topbar">
+  <a href="index.html" class="back">Atrás</a>
+  <h1>Propiedades CSS</h1>
+</div>
+<ul class="index">
+  <li><a href=#selectores>Selectores</a></li>
+  <li><a href=#pseudoclases>Pseudo-clases</a></li>
+  <li><a href=#pseudoelementos>Pseudo-elementos</a></li>
+  <li><a href=#caja>Modelo de caja</a></li>
+  <li><a href=#bordes>Bordes</a></li>
+  <li><a href=#layout>Layout</a></li>
+  <li><a href=#background>Background</a></li>
+  <li><a href=#color>Color</a></li>
+  <li><a href=#degradados>Degradados</a></li>
+  <li><a href=#sombras>Sombras</a></li>
+  <li><a href=#texto>Texto</a></li>
+  <li><a href=#listas>Listas</a></li>
+  <li><a href=#columnas>Columnas</a></li>
+  <li><a href=#webfonts>Webfonts</a></li>
+  <li><a href=#mq>Media queries</a></li>
+  <li><a href=#trans>Transiciones</a></li>
+  <li><a href=#transfo>Transformaciones</a></li>
+  <li><a href=#anim>Animaciones</a></li>
+</ul>
+
+<div class="main">
+<div class="main__block" id="selectores">
+<h2>Selectores</h2>
+
+<dl>
+  <dt>Selector universal <code>*</code></dt>
+  <dd>El selector <code>*</code> se aplica a todos los elementos de un documento. Dependiendo de cómo lo usemos, puede llegar a afectar un poco al rendimiento de la página.</dd>
+  <dt>Selector de elemento</dt>
+  <dd>Para aplicar estilos a un elemento (por ejemplo, a todos los párrafos <code>&#60;p&#62;</code>), se ultiliza el selector de elemento.<br/>
+  Ejemplo:<br/>
+  <code><pre>  p {
+color: black;
+}</pre></code></dd>
+  <dt>Selector de id</dt>
+  <dd>Para aplicar estilos a un <code>id</code> (por ejemplo <code>&#60;div id="importante"&#62;</code>), se ultiliza el selector de id <code>#</code>.<br/>
+  Ejemplo:<br/>
+  <code><pre>  #importante {
+color: red;
+}</pre></code></dd>
+  <dt>Selector de clase</dt>
+  <dd>Para aplicar estilos a un <code>class</code> (por ejemplo <code>&#60;div class="frecuente"&#62;</code>), se ultiliza el selector de clase&nbsp;<code>.</code>.<br/>
+  Ejemplo:<br/>
+  <code><pre>  .frecuente {
+color: blue;
+}</pre></code></dd>
+
+  <dt>Selector de descendiente</dt>
+  <dd>Para aplicar estilos a un elemento que es hijo de otro, es decir, que está debajo en el árbol del documento, no importa cuántos niveles por debajo.<br/>
+  Ejemplo<br/>
+  <code><pre>  &#60;div id="importante"&#62;
+&#60;p&#62;Un párrafo con texto &#60;span&#62;destacado&#60;/span&#62;.&#60;/p&#62;
+&#60;/div&#62;</pre></code>
+  <code><pre>  #importante span {
+color: red;
+}</pre></code></dd>
+
+  <dt>Selector de hijo directo</dt>
+  <dd>Para aplicar estilos a un elemento que es hijo directo de otro, es decir, que está inmediamente debajo en el árbol del documento, se utiliza el selector de hijo <code>&#62;</code>.<br/>
+  Ejemplo<br/>
+  <code><pre>  &#60;div id="importante"&#62;
+&#60;p&#62;Un párrafo&#60;/p&#62;
+&#60;/div&#62;</pre></code>
+  <code><pre>  #importante &#62; p {
+color: red;
+}</pre></code></dd>
+</dl>
+</div>
+<div class="main__block" id="pseudoclases">
+<h2>Pseudo-clases</h2>
+
+<dl>
+  <dt><code>:hover</code></dt>
+  <dd>Indica el estado de un elemento (normalmente, un link) cuando pasamos el ratón por encima. Ejemplo: <code>a:hover{color: blue;}</code></dd>
+  <dt><code>:active</code></dt>
+  <dd>Indica el estado de un elemento (normalmente, un link o un botón) cuando lo presionamos. Ejemplo: <code>a:active{border: none;}</code></dd>
+  <dt><code>:focus</code></dt>
+  <dd>Indica el estado de un elemento accionable (normalmente, un link o un botón) cuando tiene el foco (el efecto al navegar con el tabulador entre links). Ejemplo: <code>a:focus{outline: 2px dashed blue;}</code></dd>
+  <dt><code>:visited</code></dt>
+  <dd>Indica un link que ya ha sido visitado. Ejemplo: <code>a:visited{color: grey;}</code></dd>
+  <dt><code>:first-child</code></dt>
+  <dd>Se refiere al primer elemento dentro de un contenedor en concreto. Ejemplo: <code>.articulo p:first-child{font-size: 20px;}</code></dd>
+  <dt><code>:last-child</code></dt>
+  <dd>Se refiere al último elemento dentro de un contenedor en concreto. Ejemplo: <code>.listado li:last-child{border-bottom: none;}</code></dd>
+  <dt><code>:nth-child()</code></dt>
+  <dd><p>
+      Se usa para seleccionar un elemento concreto en una lista de varios.
+    </p>
+    <p>
+      Si indicamos un número (ejemplo: <code>p:nth-child(3)</code>, nos referimos a ese número de elemento en particular. Si añadimos la letra <code>n</code> (ejemplo: <code>li:nth-child(3n)</code>), indicamos repetición, cada "n" elementos.
+    </p>
+    <p>
+      Si queremos usar <code>:nth-child</code> con repetición, pero queremos que empiece a contar desde un elemento distinto al primero, podemos modificarlo sumando o restando números. Ejemplo: <code>li:nth-child(4n+2)</code>.
+    </p>
+</dl>
+</div>
+<div class="main__block" id="pseudoelementos">
+<h2>Pseudo-elementos</h2>
+
+<dl>
+  <dt><code>::before</code> y <code>::after</code></dt>
+  <dd><p>Permiten añadir contenido normalmente decorativo desde CSS, sean imágenes, texto o un espacio vacío, delante (si usamos <code>before</code>) o detrás (si usamos <code>after</code>) del elemento que queramos. Para declarar el contenido en <code>before</code> o <code>after</code> usaremos la propiedad <code>content</code>. Ejemplo: <code>p::before{content: "·"}</code>.</p>
+    <p>
+      Es habitual ver escrito <code>:before</code> y <code>:after</code>, con solo ":" en lugar de "::". Escrito de esta manera, aunque no es la correcta, se soporta también en Internet Explorer 8.
+    </p>
+    <p>
+      Si queremos sencillamente generar un "espacio fantasma" al que daremos estilos, podemos crearlo declarando el <code>content</code> vacío, por ejemplo:
+    </p>
+<pre><code>  p::before{
+content: "";
+display: inline-block;
+background: hotpink;
+width: 20px;
+height: 20px;
+}</code></pre>
+
+  </dd>
+</dl>
+</div>
+<div class="main__block" id="caja">
+<h2>Modelo de caja</h2>
+<dl>
+  <dt><code>width</code></dt>
+  <dd>Determina la anchura de un elemento. Ejemplo: <code>width: 100px;</code>.</dd>
+  <dt><code>height</code></dt>
+  <dd>Determina la altura de un elemento. Ejemplo: <code>height: 100px;</code>.</dd>
+  <dt><code>min-width</code> / <code>max-width</code></dt>
+  <dd>Determinan la anchura mínima o máxima de un elemento.</dd>
+  <dt><code>min-height</code> / <code>max-height</code></dt>
+  <dd>Determinan la altura mínima o máxima de un elemento.</dd>
+  <dt><code>margin</code></dt>
+  <dd>Determina los márgenes de un elemento. Se puede declarar un margen concreto (<code>margin-top</code> / <code>margin-right</code> / <code>margin-bottom</code> / <code>margin-left</code>), o añadir los cuatro márgenes a la vez, en el orden arriba-derecha-abajo-izquerda: <code>margin: 5px 10px 5px 20px</code>.</dd>
+  <dt><code>padding</code></dt>
+  <dd>Determina el espacio entre el límite de un elemento y su contenido. Se puede declarar un padding concreto (<code>padding-top</code> / <code>padding-right</code> / <code>padding-bottom</code> / <code>padding-left</code>), o añadir los cuatro a la vez, en el orden arriba-derecha-abajo-izquerda: <code>padding: 5px 10px 5px 20px</code>.</dd>
+  <dt><code>box-sizing</code></dt>
+  <dd>Determina el modelo de caja que se aplica al elemento. El modelo de caja por defecto es <code>content-box</code>, en el cual la anchura de un elemento es igual al <code>width</code> + <code>padding</code> + <code>border</code> (con la altura ocurre lo mismo). Si declaramos el modelo de caja <code>border-box</code>, la anchura total será la que marquemos en el <code>width</code>. Para resetear el modelo de caja en todo el documento, usa este código al principio de tu CSS: <br><code>* {box-sizing: border-box;}</code></dd>
+</dl>
+</div>
+
+<div class="main__block" id="bordes">
+<h2>Bordes</h2>
+<dl>
+  <dt><code>border-width</code></dt>
+  <dd>Determina la anchura de un borde: <code>border-width: 3px;</code>.</dd>
+  <dt><code>border-color</code></dt>
+  <dd>Determina el color de un borde: <code>border-color: yellow;</code>.</dd>
+  <dt><code>border-style</code></dt>
+  <dd>Determina el estilo de un borde: <code>border-style: solid;</code>. <code>solid</code> es una línea sólida, <code>dotted</code> es una línea de puntos, <code>dashed</code> es una línea discontínua y <code>double</code> es una línea doble.</dd>
+  <dt><code>border</code></dt>
+  <dd>Los estilos de borde se pueden aplicar bajo una única declaración "shorthand": primero la anchura, después el estilo y por último el color. Ejemplo: <code>boder: 3px solid yellow;</code>.</dd>
+  <dt><code>border-radius</code></dt>
+  <dd>Determina el radio de redondeado de las esquinas de un elemento. Se puede dar el mismo radio a todas las esquinas: <code>boder-radius: 5px;</code> o uno diferente a cada una: <code>border-radius: 5px 10px 5px 0;</code>. En este último caso, el orden en que se aplica es esquina superior izquierda, superior derecha, inferior derecha, inferior izquierda.</dd>
+</dl>
+</div>
+
+<div class="main__block" id="layout">
+<h2>Layout</h2>
+<dl>
+  <dt><code>float</code></dt>
+  <dd>Hace que un elemento de bloque se coloque (flote) junto a otro. Se puede usar tanto <code>float: left;</code> para flotar a la izquierda, como <code>float: right;</code> para flotar a la derecha.</dd>
+  <dt><code>overflow</code></dt>
+  <dd>Con la propiedad overflow indicamos qué tiene que hacer un contenedor si su contenido se sale de su caja. Usando <code>overflow: hidden;</code> le diremos que oculte lo que se salga fuera; también es una buena forma de forzar a un contenedor a cubrir completamente a su contenido, cuando este contenido está flotando.</dd>
+  <dt><code>clear</code></dt>
+  <dd>Sirve para despejar un elemento que tiene otros elementos flotando a su lado. Se puede usar <code>clear: left;</code> para despejar el lado izquierdo, <code>clear: right;</code> para el derecho, o <code>clear: both;</code> para ambos a la vez.</dd>
+  <dt><code>clearfix</code></dt>
+  <dd>Es la técnica más popular para limpiar los floats. Para usarla, tenemos que añadir al bloque que contenga elementos que flotan esta CSS:
+<pre><code>  .contenedor:before,
+.contenedor:after {
+content: " ";
+display: table;
+}
+
+.contenedor:after {
+clear: both;
+}
+</code>
+</pre>
+  </dd>
+  <dt><code>display</code></dt>
+  <dd><p>Esta propiedad cambia la forma en la que un elemento se renderiza en la página: como un bloque (<code>display:block;</code>), como una línea (<code>display: inline;</code>), o como una mezcla (<code>display: inline-block</code>). Los elementos con <code>display: inline-block;</code> no provocan un salto de línea, pero a diferencia de los <code>display: inline;</code> aceptan propiedades como <code>margin-top</code>, <code>margin-bottom</code> o <code>height</code>.</p> <p>Si queremos ocultar un elemento, podemos usar <code>display: none;</code></p></dd>
+  <dt><code>position</code></dt>
+  <dd>
+    <p>La propiedad <code>position</code> nos permite &ldquo;sacar&rdquo; a un elemento del flujo normal de la página. Con <code>position: relative;</code> movemos un elemento respecto a su posición original. Con <code>position: absolute;</code> lo movemos absolutamente respecto a la ventana del navegador.</p>
+    <p>Para que un elemento posicionado absolutamente tenga como punto de partida un contenedor en particular en vez de la ventana del navegador, tendremos que aplicar <code>position: relative;</code> a dicho elemento.</p>
+    <p>Para desplazar un elemento posicionado relativamente o absolutamente, usaremos las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> o <code>right</code>, generalmente solo una de cada eje (declarar <code>top</code> y <code>bottom</code> a la vez, por ejemplo, no siempre dará el resulado que esperamos).</p>
+    <p>Cuando dos elementos posicionados relativa o absolutamente se solapan, podemos usar la propiedad <code>z-index</code> para decidir cuál queda encima de cuál. Ejemplo: <code>z-index: 1;</code></p>
+  </dd>
+  <dt><code>calc()</code></dt>
+  <dd>
+    <p>La función <code>calc()</code> nos permite hacer cálculos sencillos (sumas, restas, multiplicaciones, divisiones) de valores. Aunque está bastante limitado, nos permite hacer cosas como asignar una anchura a un elemento de un 100% (u otro porcentaje) menos una cantidad en píxeles. Ejemplo: <code>width: calc(100% - 20px);</code></p>
+    <p>
+      Para que <code>calc()</code> funcione correctamente, separa los signos aritméticos con espacios.
+    </p>
+  </dd>
+
+</dl>
+</div>
+
+<div class="main__block" id="background">
+<h2>Background</h2>
+<dl>
+  <dt><code>background-color</code></dt>
+  <dd>Sirve para poner un color de fondo a un elemento. Por ejemplo, <code>background-color: #CCCCCC;</code></dd>
+  <dt><code>background-image</code></dt>
+  <dd>Sirve para poner una imagen de fondo a un elemento. Por ejemplo, <code>background-image: url(images/bg.jpg);</code></dd>
+  <dt><code>background-position</code></dt>
+  <dd>
+    <p>
+      Sirve para posicionar una imagen de fondo en un elemento. Los fondos se deben posicionar horizontalmente (<code>left</code>/<code>center</code>/<code>right</code>) y verticalmente (<code>top</code>/<code>center</code>/<code>bottom</code>). También se pueden posicionar una cantidad fija de píxeles, o un porcentaje. Por defecto, las imágenes de fondo se posicionan en <code>left top</code>. Por ejemplo, <code>background-position: right center;</code>.
+    </p>
+    <p>
+      También podemos especificar una cantidad fija de píxeles o un porcentaje desde una esquina diferente a la por defecto, combinando palabras y unidades: <code>background-position: right 10px bottom 20px;</code>
+    </p>
+</dd>
+  <dt><code>background-repeat</code></dt>
+  <dd>Sirve para indicar la repetición de una imagen de fondo. <code>repeat</code> repite la imagen tantas veces como sea posible. <code>repeat-x</code> repite la imagen verticalmente tantas veces como sea posible. <code>repeat-y</code> repite la imagen horizontalmente tantas veces como sea posible. <code>no-repeat</code> impide que la imagen se repita. El estado por defecto de las imágenes de fondo es <code>repeat.</code> Por ejemplo, <code>background-repeat: no-repeat;</code>.</dd>
+  <dt><code>background</code></dt>
+  <dd>Los estilos de fondo se pueden aplicar bajo una única declaración "shorthand": primero la imagen, después la posición, después la repetición y por último el color. Ejemplo: <code>background: url(images/bg.jpg) right center no-repeat #CCCCCC;</code>.</dd>
+</dl>
+</div>
+<div class="main__block" id="color">
+<h2>Color</h2>
+<dl>
+  <dt>Nombre</dt>
+  <dd>Algunos colores, como <code>black</code>, <code>white</code>, <code>red</code> o <code>blue</code> se pueden utilizar simplemente con su nombre. Aquí encontrarás los nombres de los 147 colores que existen en CSS: <a href="http://www.colors.commutercreative.com/grid/">http://www.colors.commutercreative.com/grid/</a></dd>
+  <dt>Hexadecimal</dt>
+  <dd>Los colores se pueden utilizar mediante su código hexadecimal, como por ejemplo <code>#000000</code>, <code>#ff0000</code> o <code>#dadada</code>.</dd>
+  <dt><code>rgba</code></dt>
+  <dd>Los colores se pueden utilizar indicando sus valores en el canal rojo, verde, azul y alfa. Este último canal indica la cantidad de transparencia que tendrá el color, y se expresa en base 1. Ejemplo: <code>background-color: rgba(255, 0, 0, .5);</code>.</dd>
+  <dt><code>hsla</code></dt>
+  <dd>Los colores se pueden utilizar indicando sus valores de tono, saturación, luminosidad y alfa. El tono indica el punto en el que se encuentra el color en la rueda de color, y se expresa con un valor (grado) comprendido entre 0 y 360. La saturación se expresa con un porcentaje, donde 0% es gris y 100% es el color en su máxima saturación. La luminosidad se exprea con un porcentaje, donde 0% es negro, 50% es el color puro y 100% es blanco. El canal alfa indica la cantidad de transparencia que tendrá el color, y se expresa en base 1. Ejemplo: <code>background-color: hsla(310, 100%, 50%, .8);</code>. Esta herramienta te puede ayudar con este tipo de colores: <a href="http://hslpicker.com/">http://hslpicker.com</a>.</dd>
+</dl>
+</div>
+<div class="main__block" id="degradados">
+<h2>Degradados</h2>
+<dl>
+  <dt><code>linear-gradient</code></dt>
+  <dd><p>Un degradado lineal es la forma más habitual de degradado (de un punto a otro siguiendo una línea recta y con dos o más colores). Todos los degradados se tratan como imágenes de fondo, y se declaran en la propiedad <code>background-image</code> o <code>background</code>.</p>
+    <p>La forma de escribirnos es declarando el ángulo (en grados) o la dirección y los diferentes colores de corte.</p>
+    <p>Ejemplo de degradado entre dos colores de arriba abajo:<br>
+      <code>div{background-image: linear-gradient(180deg, yellow, blue);}</code>
+    </p>
+    <p>Ejemplo de degradado entre varios colores, en diagonal:<br>
+      <code>div{background-image: linear-gradient(to bottom right, yellow 0%, blue 10%, red 50%, purple 100%);}</code>
+    </p>
+  </dd>
+  <dt><code>radial-gradient</code></dt>
+  <dd>
+    <p>
+      Un degradado radial o en forma cicular se declara indicando el tamaño (si queremos), forma (<code>circle</code> o <code>ellipse</code>), posición del vértice, cortes de color.
+    </p>
+    <p>
+      Ejemplo de degradado circular posicionado en la esquina superior derecha entre dos colores:<br>
+      <code>background-image: radial-gradient(circle at right top, yellow, blue);</code>
+    </p>
+    <p>
+      Ejemplo de degradado elíptico centrado entre 4 colores:<br>
+      <code>background-image: radial-gradient(ellipse at center, yellow 10%, blue 20%, green 50%, brown 100%);</code>
+    </p>
+  </dd>
+  <dt><code>repeating-linear-gradient</code></dt>
+  <dd><p>Este tipo de degradado nos permite crear un patrón o degradado que se repite de forma continua. Ejemplo: <code>repeating-linear-gradient(180deg, #1ac6cc, #1ac6cc 7%, #646464 10%)</code>.</p>
+    <p>La forma de que tenga espacio para repetirse es no declarar el 100% del espacio que ocuparán los colores (en el ejemplo anterior, tenemos hasta el 10%), o bien usar unidades absolutas (píxeles).</p>
+  </dd>
+</dl>
+</div>
+<div class="main__block" id="sombras">
+<h2>Sombras</h2>
+<dl>
+  <dt><code>box-shadow</code></dt>
+  <dd>
+    <p>La forma de declarar sombras en un elemento es con la propiedad <code>box-shadow</code>. Los valores que se introducen son el desplazamiento de la sombra en el eje x, el desplazamiento en el eje y, la difuminación de la sombra, el spread (un espacio de color sólido antes de que empiece el difuminado; es opcional) y el color de la sombra. Además, si usamos la propiedad <code>inset</code>, la sombra se renderizará por dentro del elemento en vez de por fuera.</p>
+    <p>Ejemplo de sombra normal:<br>
+      <code>box-shadow: 5px 5px 3px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Ejemplo de sombra con spread:<br>
+      <code>box-shadow: 5px 5px 3px 2px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Ejemplo de sombra con <code>inset</code>:<br>
+      <code>box-shadow: inset 5px 5px 3px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Un elemento puede tener más de una sombra, que se posicionan una debajo de la otra. Ejemplo: <br>
+      <code>box-shadow: 0 5px 0 lightblue, 0 10px 0 hotpink;</code>
+    </p>
+  </dd>
+  <dt><code>text-shadow</code></dt>
+  <dd>
+    <p>La forma de declarar una sombra de texto es igual que la de <code>box-shadow</code>, con la única diferencia de que en <code>text-shadow</code> no existe el inset (no se puede renderizar la sombra por dentro del texto).</p>
+    <p>Ejemplo: <code>text-shadow: 2px 2px 3px rgba(0, 0, 0, .4);</code></p>
+  </dd>
+</dl>
+</div>
+
+<div class="main__block" id="texto">
+<h2>Texto</h2>
+<dl>
+  <dt><code>font-family</code></dt>
+  <dd>Sirve para indicar la familia tipográfica de un elemento de texto. Se puede indicar más de una familia, y el navegador escogerá la primera que encuentre disponible. Si el nombre de la familia tipográfica tiene más de una palabra, deberá ir entre comillas. Ejemplo: <code>font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; </code></dd>
+  <dt><code>color</code></dt>
+  <dd>Sirve para indicar el color de un elemento de texto (párrafo, enlace, etc.). Ejemplo: <code>color: red;</code>.</dd>
+  <dt><code>font-weight</code></dt>
+  <dd>Permite cargar un peso distinto de la tipografía (bold, normal, 300, 600, etc). <br>Ejemplo: <code>font-weight: bold;</code></dd>
+  <dt><code>font-style</code></dt>
+  <dd>Indica si el texto se renderizará con la tipografía normal (<code>font-style: normal;</code>), cursiva (<code>font-style: italic;</code>) u oblícua (<code>font-style: oblique;</code>).</dd>
+  <dt><code>text-align</code></dt>
+  <dd>Sirve para indicar la alineación del texto, que puede ser <code>left</code> (alineado a la izquierda, opción por defecto), <code>right</code> (alineado a la derecha), <code>center</code> (centrado) o <code>justify</code> (justificado). Ejemplo: <code>text-align: center;</code>.</dd>
+  <dt><code>text-decoration</code></dt>
+  <dd>Indica si un elemento va subrayado (<code>text-decoration: underline;</code>), tachado (<code>text-decoration: line-through;</code>) o sobrerayado (<code>text-decoration: overline;</code>). Si queremos quitarle cualquiera de estos efectos, usaremos <code>text-decoration: none;</code></dd>
+  <dt><code>vertical-align</code></dt>
+  <dd>Indica la posición vertical de un elemento de línea (un texto o una imagen) respecto a otro. Podemos indicar que los elementos se alineen por la línea base (<code>vertical-align: baseline;</code>), centrado (<code>vertical-align: middle;</code>), u otros valores respecto a la posición y altura del texto: <code>super</code>, <code>sub</code>, <code>text-top</code>, <code>text-bottom</code>, <code>top</code>, <code>bottom</code>. También con unidades, por ejemplo <code>vertical-align: 4px;</code></code></dd>
+  <dt><code>line-height</code></dt>
+  <dd>
+    Señala la altura de la línea (de ello depende en parte el espacio que deja una línea por arriba y por abajo). Esta altura de línea se puede especificar en una unidad (ejemplo: <code>line-height: 24px;</code>) o dejar que sea proporcional al tamaño del texto (ejemplo: <code>line-height: 1.5;</code>).
+  </dd>
+  <dt><code>text-indent</code></dt>
+  <dd>
+    Permite que el texto que nos interese tenga un margen inicial en la línea. Se puede usar para que la primera línea de los párrafos de un texto esté indentada (tenga un pequeño margen), por ejemplo: <code>p{text-indent: 20px;}</code>.
+  </dd>
+</dl>
+</div>
+
+<div class="main__block" id="listas">
+<h2>Listas</h2>
+<dl>
+  <dt><code>list-style</code></dt>
+  <dd><p><code>list-style</code> es el método abreviado para los estilos de lista: indicamos el tipo de lista, si tiene una imagen como bullet y la posición de los bullets o números respecto a la lista. Ejemplo: <code>list-style: square inside;</code></p>
+    <p>Si queremos que una lista no tenga bullets o numeración, usaremos <code>list-style: none;</code>.</dd>
+  <dt><code>list-style-type</code></dt>
+  <dd>Indica el tipo de bullet o numeración en una lista. Por defecto, en un ul es <code>list-style-type: disc;</code>. Otros valores son <code>circle</code>, <code>square</code>, <code>lower-latin</code>, etc…</dd>
+  <dt><code>list-style-position</code></dt>
+  <dd>Indica la posición de los bullets o números respecto a su contenedor (la lista). Puede ser <code>inside</code> (dentro de la lista) u <code>outside</code> (fuera de la lista).</dd>
+  <dt><code>list-style-image</code></dt>
+  <dd>
+    Permite asignar una imagen como bullet personalizado en una lista. Ejemplo: <code>list-style-image: url(image.gif);</code>
+  </dd>
+</dl>
+</div>
+
+<div class="main__block" id="columnas">
+<h2>Columnas</h2>
+<dl>
+  <dt><code>column-count</code></dt>
+  <dd><p>Determina el número de columnas que tiene un bloque de texto (por defecto es 1). Ejemplo: <code>column-count: 3;</code></p></dd>
+  <dt><code>column-gap</code></dt>
+  <dd><p>Determina el espacio entre las distintas columnas. Se puede indicar en píxeles, ems... Ejemplo: <code>column-gap: 50px;</code></p></dd>
+  <dt><code>column-rule</code></dt>
+  <dd><p>Determina los estilos para una línea de separación entre las columnas. Se declara de manera similar a los bordes: primero el ancho (que puede ser <code>thin</code>, <code>medium</code>, <code>thick</code>, o de un grosor específico), después el estilo (como en los bordes: <code>solid</code>, <code>dashed</code>, <code>dotted</code> o <code>double</code>) y, por último, el color. Ejemplo: <code>column-rule: 1px solid black;</code></p></dd>
+</dl>
+</div>
+<div class="main__block" id="webfonts">
+<h2>Webfonts</h2>
+<dl>
+  <dt><code>@font-face</code></dt>
+  <dd><p>Esta declaración sirve para poder utilizar tipografías distintas a las instaladas en el sistema del usuario. Las tipografías deben estar alojadas en el servidor (por ejemplo, en una carpeta "fonts"). Para poderlas usar, debemos darle un nombre a la familia tipográfica, especificar la ruta donde están los archivos de las fuentes (en sus distintos formatos, si fuera necesario) y, si queremos, indicar el estilo de la fuente (bold, italic, etc). Un ejemplo de uso sería:</p>
+  <code><pre>  @font-face {
+font-family: "Museo";
+src: url('/fonts/museo.woff') format('woff');
+font-weight: normal;
+}</pre></code>
+  <p>Para poder usar esta tipografía en nuestra página, simplemente tendríamos que llamarla con el nombre que le hayamos dado, como por ejemplo:</p>
+  <code><pre>  body {
+font-family: "Museo", Verdana, sans-serif;
+}</pre></code>
+  </dd>
+  <dt>Formatos de fuentes</dt>
+  <dd><p>Existen múltiples formatos de fuentes. Los estándar y mejor optimizados son los formatos Woff y Woff2, soportados en los navegadores modernos. Si queremos, podemos cargar también el formato truetype (ttf), soportado en la mayoría de navegadores más antiguos. Si queremos utilizar más de un formato para garantizar un mayor soporte, se hace de la siguiente forma: </p>
+  <code><pre>  @font-face {
+font-family: "Museo";
+src:
+  url('/fonts/museo.woff2') format('woff2'),
+  url('/fonts/museo.woff') format('woff'),
+  url('/fonts/museo.ttf') format('truetype');
+}</pre></code>
+    <p>Para convertir un archivo tipográfico a múltiples formatos, podemos utilizar el <a href="http://www.fontsquirrel.com/tools/webfont-generator">generador de webfonts de FontSquirrel</a>.</p>
+  </dd>
+  <dt>Servicios de webfonts</dt>
+  <dd>
+    <p>Existen múltiples servicios, tanto gratuitos como de pago, desde los que podemos utilizar webfonts. Algunos de los más destacados son:</p>
+    <ul>
+      <li><a href="http://www.google.com/fonts">Google Fonts</a>: servicio gratuito de Google. Para poder usar sus tipografías, solo hay que seleccionaras, añadirlas a una colección, seleccionar los pesos que queremos y añadir el código que nos muestra al <code>&#60;head&#62;</code> de nuestro documento HTML. En <a href="http://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html">este artículo</a> podemos encontrar una lista de algunas de las mejores tipografías disponibles en Google Fonts, entre otros.</li>
+      <li><a href="https://typekit.com/">Typekit</a>: servicio de pago de Adobe en el que, mediante una subscripción anual, tenemos acceso a una enorme librería de tipografías comerciales.</li>
+      <li><a href="http://www.myfonts.com/">Myfonts</a>: página donde podemos comprar licencias de una enorme variedad de fuentes. Una vez compradas, se pueden descargar y utilizar en nuestras páginas mediante <code>@font-face</code>.</li>
+    </ul>
+  </dd>
+</dl>
+</div>
+<div class="main__block" id="mq">
+<h2>Media queries</h2>
+<dl>
+  <dt><code>@media</code></dt>
+  <dd>
+    <p>Las reglas <code>@media</code> sirven para englobar entre llaves una serie de estilos que solo se emplearán si la web se reproduce en un medio concreto, como en pantalla (<code>@media screen{/*CSS para pantalla*/}</code>) o impresión (<code>@media print{/*CSS para impresión*/}</code>).</p>
+  </dd>
+  <dt><code>@media</code> queries</dt>
+  <dd>
+    <p>Las queries (condiciones) son una extensión de las <code>@media</code>, que típicamente nos permitirán añadir condiciones de estilo en función de la anchura y altura del navegador. La forma normal de escribirlas es: <br> <code><pre>
+@media screen and (/* condición de altura o anchura*/){
+/* estilos para esa condición */
+}</pre></code></p>
+    <p>
+      Las condiciones más normales serán anchura mínima (<code>min-width</code>) y anchura máxima (<code>max-width</code>).
+    </p>
+    <p>
+      La forma lógica de escribir las media queries es debajo de la CSS que quieren sobreescribir, y en un orden creciente o decreciente en función de nuestra estrategia. Si hemos empezado nuestra web por el layout de escritorio, normalmente escribiremos nuestras media queries así:
+<code><pre>  .container{
+/*CSS inicial: tres columnas de contenido*/
+}
+
+@media screen and (max-width: 900px){
+.container{
+  /*CSS para dos columnas de contenido*/
+}
+}
+
+@media screen and (max-width: 650px){
+.container{
+  /*CSS para una columna de contenido*/
+}
+}
+</pre></code>
+    </p>
+    <p>
+      Si hemos empezado por el layout de móvil, el orden normal de nuestras media quieres será de menor a mayor, y usando <code>min-width</code>:
+<code><pre>  .container{
+/*CSS inicial: una columna de contenido*/
+}
+
+@media screen and (min-width: 650px){
+.container{
+  /*CSS para dos columnas de contenido*/
+}
+}
+
+@media screen and (min-width: 900px){
+.container{
+  /*CSS para tres columnas de contenido*/
+}
+}
+</pre></code>
+
+    </p>
+  </dd>
+  <dt>combinar condiciones</dt>
+  <dd>
+    <p>Las condiciones de una media query se pueden combinar, especialmente cuando nos interesa que unos estilos se apliquen solo entre un tamaño y otro, y no tener que sobreescribirlos en otra media query. Para hacer esto, sencillamente añadimos la palabra <code>and</code> y otra condición entre paréntesis, por ejemplo: <code>@media screen and (min-width: 400px) and (max-width: 800px){/*estilos que solo se aplicarán entre 400px y 800px de ancho*/}</code>.</p>
+  </dd>
+
+</dl>
+</div>
+<div class="main__block" id="trans">
+<h2>Transiciones</h2>
+<dl>
+  <dt><code>transition</code></dt>
+  <dd>
+    Para añadir una transición a un elemento en un cambio de estado (por ejemplo, <code>:hover</code> o cuando se le añade o quita una clase), usaremos <code>transition</code>, declarando el tiempo que durará la transición en segundos o milisegundos y la propiedad a transicionar (por defecto, <code>all</code>).<br>Ejemplo: <code>a{transition: .4s background-color;}</code>
+  </dd>
+</dl>
+</div>
+<div class="main__block" id="transfo">
+<h2>Transformaciones</h2>
+<dl>
+  <dt><code>transform</code></dt>
+  <dd>
+    Permite modificar el aspecto o posición de un elemento sin alterar su entorno (por ejemplo, hacer algo más grande sin mover los elementos de alrededor). Los tipos de transformación habituales son <code>translate()</code>, <code>scale()</code>, <code>rotate()</code>, <code>skewX()</code> y <code>skewY()</code>.
+  </dd>
+  <dt><code>transform: translate()</code></dt>
+  <dd>
+    Desplaza a un elemento en el eje X y el eje Y. Ejemplo:
+<pre><code>  .ejemplo{
+transform: translate(10px, 20px);
+}</code></pre>
+  </dd>
+  <dt><code>transform: scale()</code></dt>
+  <dd>
+    Altera el tamaño de un elemento en base a 1. Ejemplo:
+<pre><code>  .ejemplo{
+transform: scale(1.5);
+}</code></pre>
+  </dd>
+  <dt><code>transform: rotate()</code></dt>
+  <dd>
+    Gira un elemento a partir de su centro, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: rotate(15deg);
+}</code></pre>
+  </dd>
+  <dt><code>transform: skewX()</code></dt>
+  <dd>
+    Deforma un elemento sobre el eje X, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: skewX(15deg);
+}</code></pre>
+  </dd>
+  <dt><code>transform: skewY()</code></dt>
+  <dd>
+    Deforma un elemento sobre el eje Y, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: SkewY(15deg);
+}</code></pre>
+  </dd>
+</dl>
+</div>
+<div class="main__block" id="anim">
+<h2>Animaciones</h2>
+<dl>
+  <dt>Animaciones CSS</dt>
+  <dd>
+    <p>
+      Las animaciones permiten hacer movimientos y transiciones sencillas en elementos web, sin necesidad de interacción por parte del usuario.
+    </p>
+    <p>
+      Las animaciones se definen con <code>@keyframes</code> y se asignan posteriormente a los elementos que nos interese animar.
+    </p>
+    <p>
+      Algunos navegadores pueden necesitar todavía que declares las animaciones con su prefijo (<code>-webkit</code>, <code>-moz</code>, etc). Compruébalo en <a href="http://caniuse.com">Can I Use</a>.
+    </p>
+  </dd>
+  <dt><code>@keyframes</code></dt>
+  <dd>
+    <p>
+      Define los pasos que seguirá una animación, y le da un nombre para poderse referir a ella más adelante.
+    </p>
+    <p>
+      Los estilos de cada paso de la animación se engloban entre <code>{}</code>. Los pasos pueden indicarse con <code>from</code> y <code>to</code>, si son solo dos, o con <code>%</code>.
+    </p>
+    <p>Ejemplo:
+<pre><code>  @keyframes ejemplo{
+0%{
+  width: 20px;
+}
+20%{
+  width: 50px;
+}
+80%{
+  width: 90px;
+}
+100%{
+  width: 240px;
+}
+}</code></pre>
+    </p>
+  </dd>
+  <dt><code>animation</code></dt>
+  <dd>
+    <p>
+      Esta propiedad permite asignar una animación a un elemento, indicando en este orden: nombre de la animación, duración en segundos (s) o milisegundos (ms), velocidad (linear, ease-in, ease-out, ease-in-out), retraso en empezar, repeticiones, dirección en la que se produce (<code>normal</code>, <code>reverse</code>, o <code>alternate</code> si queremos que cambie con cada repetición).	Tienes algunas opciones más en la <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">Mozilla Developer Network</a>.
+    </p>
+    <p>
+      Un ejemplo de asignación de animación:
+<pre><code>  .elemento{
+animation: ejemplo 3s ease-out 3s 3 alternate;
+}</code></pre>
+    </p>
+  </dd>
+</dl>
+</div>
+</div>

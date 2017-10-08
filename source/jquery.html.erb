@@ -1,0 +1,297 @@
+---
+title: Apuntes de desarrollo web - HTML, CSS y JS
+description:
+---
+
+<div class="topbar">
+  <a href="index.html" class="back">Atrás</a>
+  <h1>jQuery</h1>
+</div>
+<ul class="index">
+  <li><a href=#principios>Principios</a></li>
+  <li><a href=#seleccionar-nodos>Seleccionar y filtrar nodos en el DOM</a></li>
+  <li><a href=#alterar-contenido>Alterar el contenido del DOM</a></li>
+  <li><a href=#alterar-clases>Alterar clases y atributos en el DOM</a></li>
+  <li><a href=#loops>Loops</a></li>
+  <li><a href=#eventos>Eventos y listeners</a></li>
+  <li><a href=#animacion>Animación</a></li>
+</ul>
+
+<div class="main">
+  <div class="main__block" id="principios">
+    <h2>Principios</h2>
+    <dl>
+      <dt>Sobre esta guía</dt>
+      <dd>
+        <p>
+          Esta guía es una referencia rápida de algunas de las funciones más habituales de jQuery. Es una guía introductoria; si queres saber más sobre una función o su sintaxis, es mejor que consultes directamente en la <a href="http://api.jquery.com">web oficial</a> o en <a href="http://jqapi.com">jqapi.com</a>.
+        </p>
+      </dd>
+      <dt>¿Para qué sirve jQuery?</dt>
+      <dd>
+        <p>
+          El framework jQuery facilita el uso de JavaScript. Se trata de una colección de funciones que hacen que escribir JS sea más simple e intuitivo, y ahorra tiempo de desarrollo. Además, gestiona inconsistencias entre navegadores, cosa especialmente importante si nos preocupan versiones antiguas de Internet Explorer.
+        </p>
+      </dd>
+      <dt>Diferencias con JS normal</dt>
+      <dd>
+        <p>
+          jQuery requiere que emplees su selector <code>$()</code>, que es similar a <code>document.querySelectorAll()</code>, para poder emplear sus funciones con él. Gracias a esto, permite el encadenado de funciones bajo un mismo selector, como por ejemplo: <code>$(".test").hide().delay(500).fadeIn();</code>
+        </p>
+        <p>
+          Además, cualquier función de jQuery incluye el loop por defecto, por lo que en vez de seleccionar todos los nodos que cumplan con una característica y luego escribir un loop con <code>for</code> para ponerles una clase una por una, sencillamente puedes escribir <code>$("p").addClass("ejemplo");</code>
+        </p>
+      </dd>
+      <dt>Usar jQuery en nuestra web</dt>
+      <dd>
+        <p>
+          Para usar jQuery en nuestra web, descargaremos la librería desde <a href="https://jquery.com/download/">la web oficial</a>, seleccionando la versión "compressed, production" de entre todos los links de descarga que se nos ofrecen. Si estamos dando soporte a Internet Exporer 8 o inferior, elegiremos la versión jQuery 1.x; si no estamos dando soporte a esos navegadores, elegiremos la versión jQuery 2.x, que es más ligera.
+        </p>
+        <p>
+          A continuación, incluiremos un tag <code>script</code> en nuestro HTML (normalmente al final de la página) con la ruta del archivo jQuery. Cualquier código JavaScript que usemos y que necesite jQuery tiene que ir debajo de la llamada a jQuery, ya que el navegador lee las instrucciones en orden y no sabrá lo que es una función de jQuery si no se lo hemos explicado primero.
+        </p>
+      </dd>
+      <dt><code>$(document).ready()</code></dt>
+      <dd>
+        Normalmente cargamos nuestro JS al final de la página para evitar bloquear la carga del resto del HTML, pero si en algún momento queremos cargar el JS en el <code>head</code>, la mejor forma de asegurarnos de que el HTML se ha cargado cuando iniciamos una función es meter nuestro código dentro de la función <code>ready()</code>. Si usamos esta forma, nuestra función esperará a que el HTML esté completamente cargado:
+        <pre>
+<code> $(document).ready(function(){
+//tu código
+});</code>
+</pre>
+      </dd>
+    </dl>
+
+  </div>
+  <div class="main__block" id="seleccionar-nodos">
+    <h2>Seleccionar y filtrar nodos en el DOM</h2>
+    <dl>
+      <dt><code>$()</code></dt>
+      <dd>
+        El selector universal de jQuery nos permite seleccionar cualquier nodo del DOM usando selectores de CSS. Un ejemplo de esto es <code>$(".destacado p:first-child")</code>, que significa "selecciona el primer párrafo dentro de los elementos con la clase destacado". Siempre que seleccionemos elementos del DOM usaremos comillas, pero si queremos trabajar con variables u objetos de JS (por ejemplo, el objeto <code>document</code>), lo usaremos sin comillas.
+      </dd>
+      <dt><code>.find()</code></dt>
+      <dd>
+        Busca un un elemento descendiente (hijo) dentro de un nodo seleccionado. Por ejemplo, para buscar un elemento con la clase "seleccionado" dentro de un div con id "ejemplo", podríamos escribir <code>$("#ejemplo").find(".seleccionado");</code>
+      </dd>
+      <dt><code>.parent()</code></dt>
+      <dd>
+        Devuelve el elemento padre (o contenedor directo) de una selección. Por ejemplo, <code>$("p").parent();</code> nos devolvería los contenedores directos de todos los párrafos del documento. Opcionalmente, podemos usar esta función con un selector: <code>$("p").parent(".seleccionado");</code> devolvería los contenedores de los párrafos con la clase "selecionado".
+      </dd>
+      <dt><code>.parents()</code></dt>
+      <dd>
+        Es similar a <code>.parent()</code>, pero en lugar de acceder un solo nivel, rastrea todos los elementos padre del selector que le demos.
+      </dd>
+      <dt><code>.next()</code></dt>
+      <dd>
+        Devuelve el siguiente elemento al seleccionado. Por ejemplo, <code>$("p").next();</code> nos devolvería el elemento siguiente de cada párrafo del documento. Opcionalmente, podemos usar esta función con un selector: <code>$("p").next(".seleccionado");</code> devolvería el elemento siguiente a cada párrafo, siempre que tuviera la clase "selecionado".
+      </dd>
+      <dt><code>.nextAll()</code></dt>
+      <dd>
+        Es similar a <code>.next()</code>, pero devuelve todos los elementos siguientes al seleccionado, en lugar de solo el primero.
+      </dd>
+      <dt><code>.prev()</code></dt>
+      <dd>
+        Devuelve el elemento anterior al seleccionado. Por ejemplo, <code>$("p").prev();</code> nos devolvería el elemento anterior de cada párrafo del documento. Opcionalmente, podemos usar esta función con un selector: <code>$("p").prev(".seleccionado");</code> devolvería el elemento anterior a cada párrafo, siempre que tuviera la clase "selecionado".
+      </dd>
+      <dt><code>.prevAll()</code></dt>
+      <dd>
+        Es similar a <code>.prev()</code>, pero devuelve todos los elementos previos al seleccionado, en lugar de solo el primero.
+      </dd>
+      <dt><code>.not()</code></dt>
+      <dd>
+        Esta función sirve para descartar elementos de una selección. Por ejemplo, si queremos añadir una clase a los li que sean impares, podemos decirle que elimine los pares ("even", en inglés) de una selección: <code>$("li").not(":even").addClass("ejemplo");</code>
+      </dd>
+      <dt><code>.has()</code></dt>
+      <dd>
+        Permite seleccionar un elemento en función de si contiene a otro o no. Por ejemplo, para seleccionar los párrafos que contengan un elemento con la clase "destacado" y añadirle una clase: <code>$("p").has(".destacado").addClass("ejemplo");</code>
+      </dd>
+      <dt><code>.is()</code></dt>
+      <dd>
+        Comprueba si el elemento seleccionado coincide con otro selector. Por ejemplo, si un <code>li</code> es además primer hijo:
+        <pre>
+<code>  $("li").each(
+  function(){
+  if($(this).is(":first-child")){
+    $(this).addClass("seleccionado");
+  }
+  }
+);
+</code></pre>
+      </dd>
+    </dl>
+  </div>
+  <div class="main__block" id="alterar-contenido">
+    <h2>Alterar el contenido del DOM</h2>
+    <dl>
+      <dt><code>.text()</code></dt>
+      <dd>
+        Permite conseguir el texto de un nodo, si lo pasamos vacío (ejemplo: <code>$("textarea").text()</code>), o bien cambiar el texto de un nodo si le pasamos un valor (ejemplo: <code>$(".mensaje").text("Muchas gracias");</code>).
+      </dd>
+      <dt><code>.html()</code></dt>
+      <dd>
+        Similar a <code>.text()</code> pero con nodos HTML, permite recuperar un nodo html (ejemplo: <code>$(".seleccionado").html();</code>) o cambiar el nodo html en función de si le pasamos un parámetro o no (ejemplo: <code>$("#mensaje").html("&lt;p&gt;¡Muchas gracias!&lt;/p&gt;");</code>).
+      </dd>
+      <dt><code>.replaceWith()</code></dt>
+      <dd>
+        Sustituye los nodos seleccionados por el nodo que le pasemos. Ejemplo: <code>$(".encabezado").replaceWith("&lt;h2&gt;Nuevo encabezado&lt;/h2&gt;");</code>
+      </dd>
+      <dt><code>.remove()</code></dt>
+      <dd>
+        Elimina el nodo seleccionado. Ejemplo: <code>$("#mensaje").remove();</code>
+      </dd>
+    </dl>
+  </div>
+  <div class="main__block" id="alterar-clases">
+    <h2>Alterar clases y atributos en el DOM</h2>
+    <dl>
+      <dt><code>.addClass()</code></dt>
+      <dd>
+        Añade al elemento seleccionado la clase que le pasemos como parámetro. Ejemplo: <code>$("p").addClass("importante");</code>
+      </dd>
+      <dt><code>.removeClass()</code></dt>
+      <dd>
+        Quita del elemento seleccionado la clase que le pasemos como parámetro. Ejemplo: <code>$("p").removeClass("importante");</code>
+      </dd>
+      <dt><code>.css()</code></dt>
+      <dd>
+        <p>
+          Permite recuperar el parámetro CSS que queramos de un elemento (ejemplo: <code>$(".elemento").css("background-color");</code>) o establecer uno o más estilos nuevos en un elemento (ejemplo: <code>$(".elemento").css("background-color", "red");</code>).
+        </p>
+        <p>
+          Si queremos pasar varios parámentros, los podemos pasar como un array (agrupado en <code>{}</code> y con los valores asignados por <code>:</code> y separados por comas).
+          <br>Ejemplo: <code>$(".ejemplo").css({"background-color": "red", "font-size": "20px"});</code>
+        </p>
+      </dd>
+      <dt><code>.attr()</code></dt>
+      <dd>
+        <p>Esta función recupera el valor del atributo de un elemento concreto (o el primero si hay varios del mismo tipo), siempre y cuando solo le pasemos como parámentro un atributo. Por ejemplo: <code>var linkDestino = $("#ejemplo a").attr("href");</code>
+        </p>
+        <p>
+          Si te pasamos un segundo parámetro con el valor del atributo, sustituirá el existente por otro (y afectando a todos los elementos que coincidan con el selector). Ejemplo: <code>$("#ejemplo a").attr("href", "index.html");</code>
+        </p>
+      </dd>
+      <dt><code>.removeAttr()</code></dt>
+      <dd>
+        Elimina un atributo de uno o varios elementos. Por ejemplo, <code>$("#ejemplo a").removeAttr("class");</code>
+      </dd>
+      <dt><code>.val()</code></dt>
+      <dd>
+        Permite recuperar el valor de un elemento de formulario (input, select, textarea…) o cambiar el valor de varios elementos. Ejemplo: <code>var seleccionado = $("select").val();</code> Y un ejemplo cambiando el valor: <code>$("textarea").val("Ejemplo");</code>
+      </dd>
+    </dl>
+  </div>
+  <div class="main__block" id="loops">
+    <h2>Loops</h2>
+    <dl>
+      <dt><code>.each()</code></dt>
+      <dd>
+        <p>
+          Aunque la mayor parte de funciones en jQuery incorporan un loop de serie (por ejemplo, <code>addClass()</code> recorre todos los elementos seleccionados y añade la clase a cada uno de ellos), de vez en cuando necesitamos especificar un loop para funciones más complejas, como puede ser que recorra una serie de elementos y le añada una clase solo si tiene ya tiene otra clase concreta.
+        </p>
+        <p>Un ejemplo de esto es:
+          <pre><code>  $("a").each(
+  function(){
+    var $elemento = $(this);
+    if ($elemento.hasClass("destacado")){
+    $elemento.addClass("especial");
+    }
+  }
+);</code></pre>
+        </p>
+        <p>
+          Para referirnos al elemento actual en un loop de varios elementos, podemos usar <code>$(this)</code>. Si vamos a referirnos a él varias veces en nuestro código, para evitar hacer una búsqueda cada vez, podemos cachear la misma cargándola en una variable, tal y como sale en el ejemplo.
+        </p>
+      </dd>
+    </dl>
+  </div>
+  <div class="main__block" id="eventos">
+    <h2>Eventos y listeners</h2>
+    <dl>
+      <dt><code>.on()</code></dt>
+      <dd>
+        Asigna una función a un evento concreto, es decir, un "event listener". Ejemplo (para asignar la función despliegaMenu a un botón con la clase "menu"): <code>$(".menu").on("click", despliegaMenu);</code>
+      </dd>
+    </dl>
+  </div>
+  <div class="main__block" id="animacion">
+    <h2>Animación</h2>
+    <dl>
+      <dt><code>.show()</code></dt>
+      <dd>
+        Muestra un elemento que estuviera oculto. Ejemplo: <code>$(".oculto").show();</code>
+      </dd>
+      <dt><code>.hide()</code></dt>
+      <dd>
+        Oculta un elemento. Ejemplo: <code>$("#menu").hide();</code>
+      </dd>
+      <dt><code>.toggle()</code></dt>
+      <dd>
+        Muestra u oculta un elemento en función de su estado inicial. Ejemplo: <code>$("#menu").toggle();</code>
+      </dd>
+      <dt><code>.slideDown()</code></dt>
+      <dd>
+        Muestra con una animación hacia abajo un elemento que estuviera oculto. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").slideDown(400);</code>
+      </dd>
+      <dt><code>.slideUp()</code></dt>
+      <dd>
+        Oculta con una animación hacia arriba un elemento que estuviera oculto. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").slideUp(800);</code>
+      </dd>
+      <dt><code>.slideToggle()</code></dt>
+      <dd>
+        Muestra u oculta un elemento con una animación vertical, en función de su estado inicial. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").slideToggle(400);</code>
+      </dd>
+      <dt><code>.fadeIn()</code></dt>
+      <dd>
+        Muestra un elemento que estuviera oculto haciendo una transición de opacidad. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").fadeIn(400);</code>
+      </dd>
+      <dt><code>.fadeOut()</code></dt>
+      <dd>
+        Oculta un elemento haciendo una transición de opacidad. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").fadeOut(400);</code>
+      </dd>
+      <dt><code>.fadeToggle()</code></dt>
+      <dd>
+        Muestra u oculta un elemento con una transición de opacidad, en función de su estado inicial. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").fadeToggle(400);</code>
+      </dd>
+      <dt><code>.fadeTo()</code></dt>
+      <dd>
+        Cambia la opacidad de un elemento. De forma opcional, se puede pasar como parámetro la duración en milisegundos. Ejemplo: <code>$(".ejemplo").fadeTo(500, 0.5);</code>
+      </dd>
+      <dt><code>.animate()</code></dt>
+      <dd>
+        <p>
+          Esta función nos permite dar instrucciones más complejas de animación, especificadas por CSS. Normalmente la animación se realizará del estado inicial al nuevo estado (CSS) que le pasemos, a la velocidad que indiquemos.
+        </p>
+        <p>Ejemplo:
+          <pre><code>  $("#ejemplo").animate({
+  opacity: 0.25,
+  marginLeft: "50px",
+  width: "100px"
+},
+5000);</code></pre>
+        </p>
+      </dd>
+      <dt><code>.delay()</code></dt>
+      <dd>
+        Esta función permite crear un retraso temporal antes de la ejecución de la siguiente orden, normalmente relacionada con efectos de animación. Ejemplo: <code>$("#ejemplo").slideUp().delay(800).fadeIn();</code>
+      </dd>
+      <dt><code>.stop()</code></dt>
+      <dd>
+        <p>
+          Para una animación en curso antes de iniciar una nueva. Es interesante para evitar que se acumulen varias animaciones al pasar el ratón por encima o similar.
+        </p>
+        <p>
+          Ejemplo:
+          <pre><code>  $(".elemento").hover(
+  function () {
+    $(this).stop().animate({width:"100px"},500);
+  },
+  function () {
+    $(this).stop().animate({width:"80px"},500);
+  }
+);</code></pre>
+        </p>
+      </dd>
+    </dl>
+  </div>
+</div>

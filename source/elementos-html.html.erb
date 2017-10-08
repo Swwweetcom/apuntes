@@ -1,0 +1,207 @@
+---
+title: Apuntes de desarrollo web - HTML, CSS y JS
+description:
+---
+<div class="topbar">
+  <a href="index.html" class="back">Atrás</a>
+  <h1>Elementos HTML</h1>
+</div>
+<ul class="index">
+  <li><a href="#basicos">Elementos básicos</a></li>
+  <li><a href="#atributos">Atributos</a></li>
+  <li><a href="#linea">Elementos de línea</a></li>
+  <li><a href="#bloque">Elementos de bloque</a></li>
+  <li><a href="#texto">Elementos de texto</a></li>
+  <li><a href="#formularios">Formularios</a></li>
+  <li><a href="#multimedia">Elementos multimedia</a></li>
+</ul>
+
+<div class="main">
+    <div class="main__block" id="basicos">
+    <h2>Elementos básicos</h2>
+
+    <dl>
+      <dt>Comentarios HTML</dt>
+      <dd>Los comentarios HTML se escriben entre <code>&lt!--</code> y <code>--&gt;</code>, y permiten poner notas para el desarrollador u ocultar partes del código al navegador. Ejemplo: <code>&lt;!-- Contenido principal --&gt;</code>
+      </dd>
+      <dt><code>&#60;!DOCTYPE html&#62;</code></dt>
+      <dd>Define el tipo de documento. Señala que un documento sigue los estándares W3C.</dd>
+      <dt><code>&#60;html&#62;</code></dt>
+      <dd>Etiqueta que engloba todo el documento HTML.</dd>
+      <dt><code>&#60;head&#62;</code></dt>
+      <dd>Etiqueta que engloba la metainformación del documento: título, CSS, JavaScript…</dd>
+      <dt><code>&#60;meta charset&#62;</code></dt>
+      <dd>Etiqueta, dentro del <code>&#60;head&#62;</code>, que define la metainformación del sistema de codificación de caracteres, que suele ser UTF8: <code>&#60;meta charset="utf-8" /&#62;</code>.</dd>
+      <dt><code>&#60;meta name="viewport"&#62;</code></dt>
+      <dd><p>
+        Esta etiqueta se pone al principio de nuestro html (en el tag <code>head</code>) para que los navegadores móviles sepan que una web se adaptará correctamente a su tamaño (sea web móvil o o web responsive), y que muestren la página contando con la anchura del dispositivo. La forma correcta de escribirlo sería: <code>&#60;meta name="viewport" content="width=device-width, initial-scale=1.0" /&#62;</code>.</p>
+        <p>
+          En esta etiqueta podríamos hacer otras cosas, como bloquear el zoom al usuario (<code>user-scalable: no</code> dentro del atributo <code>content</code>), pero no es una práctica aconsejable ya que se crea un problema de accesibilidad que casi nunca estará justificado.
+        </p>
+      </dd>
+      <dt><code>&#60;title&#62;</code></dt>
+      <dd>Etiqueta, dentro del <code>&#60;head&#62;</code>, que define el título del documento.</dd>
+      <dt><code>&#60;style&#62;</code></dt>
+      <dd>Etiqueta para añadir estilos CSS dentro de un documento HTML.</dd>
+      <dt><code>&#60;link&#62;</code></dt>
+      <dd>Sirve para añadir un recurso externo, normalmente una hoja de estilos: <code>&#60;link rel="stylesheet" href="styles.css" /&#62;</code></dd>
+      <dt><code>&#60;body&#62;</code></dt>
+      <dd>Etiqueta que engloba el cuerpo (contenido) del documento.</dd>
+    </dl>
+  </div>
+
+  <div class="main__block" id="atributos">
+    <h2>Atributos</h2>
+    <dl>
+      <dt><code>id</code></dt>
+      <dd>Identifica un elemento concreto para poder aplicarle estilos o funciones de JavaScript. Cada <code>id</code> es único, solo puede aparecer una vez en cada documento HTML.</dd>
+      <dt><code>class</code></dt>
+      <dd>Identifica a una serie de elementos para poder aplicarles estilos.</dd>
+      <dt><code>href</code></dt>
+      <dd>Especifica la URL de una página, documento, o ancla a la que apunta un enlace.</dd>
+    </dl>
+  </div>
+  <div class="main__block" id="linea">
+    <h2 id=linea>Elementos de línea</h2>
+    <dl>
+      <dt><code>&#60;span&#62;</code></dt>
+      <dd>Engloba una sección, generalmente dentro de un bloque de texto. No tiene un sentido semántico y se suele añadir para poder dar estilos concretos a dicha sección.</dd>
+      <dt><code>&#60;strong&#62;</code></dt>
+      <dd>Señala una porción de texto más importante. Suele representarse con la tipografía en <b>negrita</b>.</dd>
+      <dt><code>&#60;em&#62;</code></dt>
+      <dd>Señala una porción de texto que se quiere enfatizar. Suele representarse con la tipografía en <i>cursiva</i>.</dd>
+      <dt><code>&#60;a&#62;</code></dt>
+      <dd>Marca un enlace hipertextual. El atributo <code>href</code> indica dónde lleva ese enlace: a una página externa, a una sección del documento, a un email...</dd>
+      <dt><code>&#60;i&#62;</code></dt>
+      <dd>Marca una porción de texto en <i>cursiva</i> que no tiene significado semántico ni ninguna importancia especial.</dd>
+      <dt><code>&#60;b&#62;</code></dt>
+      <dd>Marca una porción de texto en <b>negrita</b> que no tiene significado semántico ni ninguna importancia especial.</dd>
+      <dt><code>&#60;br&#62;</code></dt>
+      <dd>Crea un salto de línea en el texto. No se cierra, se puede escribir como <code>&#60;br&#62;</code> o <code>&#60;br&nbsp;/&#62;</code></dd>
+    </dl>
+  </div>
+  <div class="main__block" id="bloque">
+    <h2>Elementos de bloque</h2>
+    <dl>
+      <dt><code>&#60;div&#62;</code></dt>
+      <dd>Marca un bloque de contenido en el documento. No tiene significado semántico.</dd>
+      <dt><code>&#60;ul&#62;</code></dt>
+      <dd>Marca una lista de elementos no ordenados.</dd>
+      <dt><code>&#60;ol&#62;</code></dt>
+      <dd>Marca una lista de elementos ordenados.</dd>
+      <dt><code>&#60;li&#62;</code></dt>
+      <dd>Marca un elemento de una lista, tanto de una <code>ul</code> como de una <code>ol</code>.</dd>
+    </dl>
+  </div>
+  <div class="main__block" id="texto">
+    <h2>Elementos de texto</h2>
+    <dl>
+      <dt><code>&#60;h1&#62;</code></dt>
+      <dd>Marca un encabezado de primer nivel. Solo puede haber uno en cada página.</dd>
+      <dt><code>&#60;h2&#62;</code></dt>
+      <dd>Marca un encabezado de segundo nivel.</dd>
+      <dt><code>&#60;h3&#62;</code></dt>
+      <dd>Marca un encabezado de tercer nivel.</dd>
+      <dt><code>&#60;h4&#62;</code></dt>
+      <dd>Marca un encabezado de cuarto nivel.</dd>
+      <dt><code>&#60;h5&#62;</code></dt>
+      <dd>Marca un encabezado de quinto nivel.</dd>
+      <dt><code>&#60;h6&#62;</code></dt>
+      <dd>Marca un encabezado de sexto nivel.</dd>
+      <dt><code>&#60;p&#62;</code></dt>
+      <dd>Marca un párrafo.</dd>
+    </dl>
+  </div>
+  <div class="main__block" id="formularios">
+    <h2>Formularios</h2>
+
+    <dl>
+      <dt><code>&#60;form&#62;</code></dt>
+      <dd>Marca un formulario y engloba todos sus campos y botones.
+        <p>El atributo <code>action</code> indica la acción que se llevará a cabo cuando se envíe el formulario, clicando el botón de submit (normalmente, la acción consiste en enviar el formulario a un servidor).</p>
+        <p>El atributo <code>method</code> especifica el método HTTP (<code>GET</code> o <code>POST</code>) que se utilizará al enviar el formulario.</p>
+      </dd>
+      <dt><code>&#60;fieldset&#62;</code></dt>
+      <dd>Marca un conjunto de elementos relacionados dentro de un formulario.</dd>
+      <dt><code>&#60;legend&#62;</code></dt>
+      <dd>Sirve como título o leyenda para un <code>&#60;fieldset&#62;</code>.</dd>
+      <dt><code>&#60;label&#62;</code></dt>
+      <dd>Marca la etiqueta de un campo del formulario. Cada <code>&#60;label&#62;</code> está asociada a un <code>&#60;input&#62;</code>.</dd>
+      <dt><code>&#60;input&#62;</code></dt>
+      <dd>Marca un campo de un formulario, donde el usuario puede ejecutar alguna acción, como escribir. El atributo <code>type</code> define de qué tipo de campo se trata. Algunos de los tipos que existen son:
+        <ul>
+          <li><code>&#60;input type="text" /&#62;</code>: Marca un campo de texto libre de una línea.</li>
+          <li><code>&#60;input type="email" /&#62;</code>: Marca un campo de e-mail.</li>
+          <li><code>&#60;input type="submit" /&#62;</code>: Marca un botón con el que validar el formulario.</li>
+          <li><code>&#60;input type="password" /&#62;</code>: Marca un campo de contraseña.</li>
+          <li><code>&#60;input type="email" /&#62;</code>: Marca un campo de e-mail.</li>
+          <li><code>&#60;input type="tel" /&#62;</code>: Marca un campo de teléfono.</li>
+          <li><code>&#60;input type="date" /&#62;</code>: Marca un campo donde introducir una fecha.</li>
+          <li><code>&#60;input type="number" /&#62;</code>: Marca un campo numérico.</li>
+          <li><code>&#60;input type="search" /&#62;</code>: Marca un campo de búsqueda.</li>
+          <li><code>&#60;input type="radio" /&#62;</code>: Marca un botón de opción. Los botones de opción permiten al usuario elegir una única opción de entre las posibles.</li>
+          <li><code>&#60;input type="checkbox" /&#62;</code>: Marca un campo de casilla. Las casillas permiten al usuario elegir cero o más opciones de entre las presentes.</li>
+        </ul>
+        <p>El atributo <code>placeholder</code> permite añadir un pequeño texto de ayuda dentro de un <code>input</code>. Este texto de apoyo desaparece en cuanto el usuario empieza a escribir dentro del campo.</p>
+        <p>El atributo <code>required</code> indica que el campo en cuestión es obligatorio. Si el usuario lo deja vacío, o no lo rellena de manera adecuada, el navegador dará algún tipo de mensaje de error.</p>
+      </dd>
+      <dt><code>&#60;button&#62;</code></dt>
+      <dd>Marca un botón clicable. Con el atributo <code>type="submit"</code> envía el formulario.</dd>
+      <dt><code>&#60;textarea&#62;</code></dt>
+      <dd>Marca un campo de texto de múltiples líneas, a diferencia del <code>&#60;input type="text" /&#62;</code>.</dd>
+      <dt><code>&#60;select&#62;</code></dt>
+      <dd>Marca una lista desplegable de opciones, definidas con el elemento <code>&#60;option&#62;</code>.</dd>
+      <dt><code>&#60;option&#62;</code></dt>
+      <dd>Marca cada una de las opciones dentro de un <code>&#60;select&#62;</code>.</dd>
+    </dl>
+  </div>
+  <div class="main__block" id="multimedia">
+    <h2>Elementos multimedia</h2>
+    <dl>
+      <dt><code>&#60;img&#62;</code></dt>
+      <dd>Marca una imagen. No se cierra, se puede escribir como <code>&#60;img&#62;</code> o <code>&#60;img /&#62;</code>. El atributo <code>src</code> indica la ruta a la imagen en cuestión. El atributo <code>alt</code> debe contener una descripción breve de la imagen que servirá como texto alternativo en caso de que falle la carga de la imagen. Ejemplo: <code>&#60;img src="kitten.jpg" alt="Un gatito" /&#62;</code></dd>
+      <dt><code>&#60;video&#62;</code></dt>
+      <dd>
+        <p>
+          Permite usar un reproductor de vídeo nativo. Aunque se podría usar como el tag <code>img</code>, vinculándolo con el atributo <code>src</code>, lo normal es utilizar los tags <code>&lt;source&gt;</code>, poner varios formatos de vídeo diferentes (al menos <code>.mp4</code> y <code>.webm</code>, con su <code>type</code> indicando el formato), y que el navegador escoja el formato que pueda reproducir.
+        </p>
+        <p>
+          Ejemplo:
+<pre><code>  &lt;video controls&gt;
+&lt;source src="pelicula.webm" type="video/webm"&gt;
+&lt;source src="pelicula.mp4" type="video/mp4"&gt;
+&lt;source src="pelicula.ogg" type="video/ogg"&gt;
+&lt;/video&gt;</code></pre>
+        </p>
+        <p>
+          El atributo <code>controls</code> permite que se rendericen los controles de reproducción para que el usuario pueda controlar el vídeo. Otros atributos interesantes son <code>width</code> y <code>height</code> (para darle un tamaño de reproducción al vídeo), <code>poster="ruta/de/imagen.jpg"</code> (para cargar una imagen de carátula), <code>mute</code> (el vídeo comienza sin sonido), <code>loop</code> (el vídeo se reproduce contínuamente), <code>preload</code> (el vídeo se empieza a descargar aunque el usuario no haya hecho nada) y <code>autoplay</code> (el vídeo empieza a reproducirse en cuanto carga la página).
+        </p>
+      </dd>
+      <dt><code>&#60;audio&#62;</code></dt>
+      <dd>
+        El reproductor de audio nativo comparte casi todas las características con <code>&lt;video&gt;</code>. Los formatos de audio que se emplean son <code>.mp3</code> (<code>type="audio/mp3"</code>) y <code>.ogg</code> (<code>type="audio/ogg"</code>).
+      </dd>
+      <dt><code>&#60;iframe&#62;</code></dt>
+      <dd>
+        <p>
+          Un <code>iframe</code> permite incrustar una web externa dentro de nuestra web, en un espacio definido por el <code>width</code> y el <code>height</code> que le demos. Es la forma más habitual de incorporar vídeos de un servicio externo, como Youtube.
+        </p>
+        <p>
+          Ejemplo de un vídeo con iframe de Youtube:
+<pre><code>  &lt;iframe width="560" height="315"
+src="https://www.youtube.com/embed/-qTIGg3I5y8"
+frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        </p>
+        <p>
+          Este código está utilizando <code>frameborder</code>, un atributo html anticuado para evitar que el navegador pinte un borde al <code>iframe</code>. Opcionalmente, podemos quitar este atributo y poner en nuestra CSS <code>iframe{border:0;}</code>
+        </p>
+        <p>
+          El atributo <code>allowfullscreen</code> permite que el vídeo se pueda reproducir en pantalla completa.
+        </p>
+        <p>
+          Cuando introducimos vídeos con un iframe en una web responsive, mantener las proporciones de un vídeo en todos los tamaños de pantalla es complejo. Podemos ayudarnos de herramientas como <a href="http://embedresponsively.com/">Embed Responsively</a>, que nos dan una serie de estilos ya preparados y juegan con paddings y porcentajes para simular el aspect-ratio de los vídeos.
+        </p>
+      </dd>
+    </dl>
+  </div>
+</div>
