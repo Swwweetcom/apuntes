@@ -1,0 +1,10 @@
+.intro{
+  margin: 0 calc(var(--spacing) * -1);
+  padding: 2rem var(--spacing) 2rem calc( var(--spacing) - 10px);
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-size: 3rem;
+  background-color: $headbgcolor;
+  border-left: 10px solid $headbordercolor;
+  color: $white;
+}
