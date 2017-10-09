@@ -1,4 +1,29 @@
-@charset "UTF-8";
+:root {
+  --spacing: 1.5rem; }
+  @media (min-width: 37.5rem) {
+    :root {
+      --spacing: 3rem; } }
+
+@font-face {
+  font-family: 'lato';
+  src: url("../fonts/lato/lato-bold.woff") format("woff"), url("../fonts/lato/lato-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'lato';
+  src: url("../fonts/lato/lato-regular.woff") format("woff"), url("../fonts/lato/lato-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'lato';
+  src: url("../fonts/lato/lato-italic.woff") format("woff"), url("../fonts/lato/lato-italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'source code';
+  src: url("../fonts/sourcecode/SourceCodePro-Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -413,77 +438,15 @@ html {
   height: 100%; }
 
 body {
-  min-height: 100%;
-  background-color: white; }
-
-/* 
-
-	DEMO.CSS – Estilos solo para visualizar las páginas de demo (snippets) 
-	$0 archivos @font-face: tipografía
-	$2 Tipografía
-	$3 Botones
-*/
-/*$0 archivos @font-face: tipografía -------------------- */
-/* Tipografía Lato */
-@font-face {
-  font-family: 'lato';
-  src: url("../fonts/lato/lato-bold.woff") format("woff"), url("../fonts/lato/lato-bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-@font-face {
-  font-family: 'lato';
-  src: url("../fonts/lato/lato-regular.woff") format("woff"), url("../fonts/lato/lato-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'lato';
-  src: url("../fonts/lato/lato-italic.woff") format("woff"), url("../fonts/lato/lato-italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic; }
-/*Tipografía Source Code Pro*/
-@font-face {
-  font-family: 'source code';
-  src: url("../fonts/sourcecode/SourceCodePro-Semibold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-/* $1 Base -------------------- */
-/* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/ */
-.cf:before, .cf:after {
-  content: "";
-  display: table; }
-
-.cf:after {
-  clear: both; }
-
-.cf {
-  zoom: 1; }
-
-/* For IE 6/7 (triggers hasLayout) */
-/* apply a natural box layout model to all elements 
-(if supporting <IE8, use a pollyfill: https://github.com/Schepp/box-sizing-polyfill ) */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-html {
-  margin: 0;
-  padding: 0; }
-
-body {
-  background: #F4F4D9;
-  color: #2D211F;
+  background: #fafafa;
+  color: #333333;
   font: 1.2em/1.8 lato, sans-serif;
-  margin: 2em 0;
-  padding: 1em 2em; }
+  margin: 0;
+  padding: 0 var(--spacing) 1rem; }
 
-/* $2 Tipografía -------------------- */
 h1 {
   font-size: 2.2em;
-  line-height: 1.2;
-  margin-bottom: 1em;
-  font-weight: bold;
-  text-transform: uppercase; }
+  line-height: 1.2; }
 
 h2 {
   font-size: 1.5em;
@@ -495,85 +458,12 @@ h2 {
 li {
   margin-bottom: .3em; }
 
-/* $3 Botones -------------------- */
-.back {
-  text-decoration: none;
-  color: #2D211F;
-  vertical-align: middle; }
-
-.back:before {
-  content: "\279b";
-  margin-right: .1em;
-  speak: none;
-  vertical-align: baseline;
-  display: inline-block;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg); }
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: #F4F4D9;
-  background: #2D211F;
-  text-align: center; }
-
-.topbar .back {
-  font-size: .8rem;
-  border: none;
-  float: left;
-  margin-left: 2rem;
-  margin-top: .55rem;
-  color: #F4F4D9; }
-
-.topbar h1 {
-  display: inline-block;
-  font-size: .8rem; }
-
-.demo-links {
-  margin-bottom: 3em;
-  list-style: none;
-  padding-left: 0; }
-
-.demo-links li {
-  margin-bottom: .3em;
-  font-family: lato, sans-serif;
-  font-size: 1.2em;
-  vertical-align: middle;
-  padding: .5em; }
-
-.demo-links a {
-  margin: 0 auto;
-  color: #2D211F;
-  text-decoration: none; }
-
-.demo-links a:hover {
-  opacity: .8; }
-
-.demo-links a:after {
-  content: "\279b";
-  margin-left: .2em;
-  speak: none;
-  vertical-align: baseline; }
-
-@media screen and (min-width: 56em) {
-  .demo-links {
-    display: flex;
-    flex-wrap: wrap; }
-
-  .demo-links li {
-    flex-basis: 33%;
-    min-width: 15em; } }
 dl {
   margin-bottom: 80px; }
 
 dt {
-  background: #2D211F;
-  color: #F4F4D9;
+  border-left: 4px solid #72ae95;
+  background: rgba(51, 51, 51, 0.1);
   padding-left: 5px;
   margin-bottom: 10px; }
 
@@ -587,20 +477,103 @@ code {
   word-wrap: break-word; }
 
 pre {
-  background: rgba(45, 33, 31, 0.2);
+  border: 1px solid rgba(114, 174, 149, 0.2);
+  background: rgba(114, 174, 149, 0.2);
   overflow: auto; }
 
 pre code {
   word-wrap: normal; }
 
 a {
-  color: #2D211F;
+  color: #f5886b;
   text-decoration: none;
-  border-bottom: 1px dotted;
   word-wrap: break-word; }
 
 a:hover {
-  border-bottom: 1px solid; }
+  opacity: .8; }
+
+.back,
+.forward {
+  text-decoration: none;
+  color: #333333;
+  vertical-align: middle; }
+
+.back:before,
+.forward:after {
+  content: "\25B6\FE0E";
+  speak: none;
+  vertical-align: .2em;
+  display: inline-block;
+  font-size: .6em; }
+
+.back:before {
+  margin-right: .4em;
+  transform: rotate(180deg); }
+
+.forward:after {
+  margin-left: .4em; }
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fafafa;
+  background: #72ae95;
+  text-align: center; }
+
+.topbar .back {
+  font-size: .8rem;
+  border: none;
+  float: left;
+  margin-left: 2rem;
+  margin-top: .55rem;
+  color: #fafafa; }
+
+.topbar h1 {
+  display: inline-block;
+  font-size: .8rem; }
+
+.intro {
+  margin: 0 calc(var(--spacing) * -1);
+  padding: 2rem var(--spacing) 2rem calc( var(--spacing) - 10px);
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-size: 3rem;
+  background-color: #72ae95;
+  border-left: 10px solid #f5886b;
+  color: #fafafa; }
+
+.demo-links {
+  margin: 1rem -1rem;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap; }
+
+.demo-links li {
+  vertical-align: middle;
+  padding: .5em;
+  min-height: 5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  border: 1px solid #f5886b;
+  border-left-width: 20px;
+  flex-basis: 100%; }
+  @media (min-width: 37.5rem) {
+    .demo-links li {
+      min-width: 20rem;
+      flex-basis: auto; } }
+
+.demo-links a {
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase; }
+
+.demo-links a:hover {
+  opacity: .8; }
 
 .index {
   margin-bottom: 3em; }
@@ -626,6 +599,9 @@ a:hover {
 
   .main__block {
     padding-top: 2rem; } }
+.content-wrapper {
+  padding-top: 3rem; }
+
 .main__block {
   display: none; }
 
