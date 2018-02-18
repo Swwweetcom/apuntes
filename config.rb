@@ -12,3 +12,6 @@ set :relative_links, true
 configure :development do
   activate :livereload
 end
+
+# Disable Haml warnings - HAML/Middleman issue
+Haml::TempleEngine.disable_option_validator!
