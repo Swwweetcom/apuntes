@@ -570,7 +570,12 @@ a:hover {
 .demo-links a {
   color: #333333;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .demo-links a:hover {
   opacity: .8; }
@@ -607,3 +612,7 @@ a:hover {
 
 .main__block:target {
   display: block; }
+
+.embed {
+  margin-left: 0;
+  background-color: #1d1f20; }
