@@ -1,0 +1,10 @@
+.main__block#position
+  %h2 Position
+  %dl
+    %dt
+      <code>position</code>
+    %dd
+      <p>La propiedad <code>position</code> nos permite &ldquo;sacar&rdquo; a un elemento del flujo normal de la página. Con <code>position: relative;</code> movemos un elemento respecto a su posición original. Con <code>position: absolute;</code> lo movemos absolutamente respecto a la ventana del navegador.</p>
+      <p>Para que un elemento posicionado absolutamente tenga como punto de partida un contenedor en particular en vez de la ventana del navegador, tendremos que aplicar <code>position: relative;</code> a dicho elemento.</p>
+      <p>Para desplazar un elemento posicionado relativamente o absolutamente, usaremos las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> o <code>right</code>, generalmente solo una de cada eje (declarar <code>top</code> y <code>bottom</code> a la vez, por ejemplo, no siempre dará el resulado que esperamos).</p>
+      <p>Cuando dos elementos posicionados relativa o absolutamente se solapan, podemos usar la propiedad <code>z-index</code> para decidir cuál queda encima de cuál. Ejemplo: <code>z-index: 1;</code></p>
