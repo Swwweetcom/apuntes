@@ -479,7 +479,8 @@ code {
 pre {
   border: 1px solid rgba(114, 174, 149, 0.2);
   background: rgba(114, 174, 149, 0.2);
-  overflow: auto; }
+  overflow: auto;
+  padding: 5px 10px; }
 
 pre code {
   word-wrap: normal; }
@@ -543,6 +544,9 @@ a:hover {
   background-color: #72ae95;
   border-left: 10px solid #f5886b;
   color: #fafafa; }
+
+.section-intro {
+  margin-bottom: 4rem; }
 
 .demo-links {
   margin: 1rem -1rem;

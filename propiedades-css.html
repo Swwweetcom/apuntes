@@ -20,18 +20,15 @@
   <li><a href=#selectores>Selectores</a></li>
   <li><a href=#pseudoclases>Pseudo-clases</a></li>
   <li><a href=#pseudoelementos>Pseudo-elementos</a></li>
-  <li><a href=#caja>Modelo de caja</a></li>
   <li><a href=#bordes>Bordes</a></li>
-  <li><a href=#layout>Layout</a></li>
   <li><a href=#background>Background</a></li>
   <li><a href=#color>Color</a></li>
   <li><a href=#degradados>Degradados</a></li>
   <li><a href=#sombras>Sombras</a></li>
   <li><a href=#texto>Texto</a></li>
   <li><a href=#listas>Listas</a></li>
-  <li><a href=#columnas>Columnas</a></li>
+  <li><a href=#columnas>Columnas de texto</a></li>
   <li><a href=#webfonts>Webfonts</a></li>
-  <li><a href=#mq>Media queries</a></li>
   <li><a href=#trans>Transiciones</a></li>
   <li><a href=#transfo>Transformaciones</a></li>
   <li><a href=#anim>Animaciones</a></li>
@@ -135,25 +132,6 @@ height: 20px;
   </dd>
 </dl>
 </div>
-<div class="main__block" id="caja">
-<h2>Modelo de caja</h2>
-<dl>
-  <dt><code>width</code></dt>
-  <dd>Determina la anchura de un elemento. Ejemplo: <code>width: 100px;</code>.</dd>
-  <dt><code>height</code></dt>
-  <dd>Determina la altura de un elemento. Ejemplo: <code>height: 100px;</code>.</dd>
-  <dt><code>min-width</code> / <code>max-width</code></dt>
-  <dd>Determinan la anchura mínima o máxima de un elemento.</dd>
-  <dt><code>min-height</code> / <code>max-height</code></dt>
-  <dd>Determinan la altura mínima o máxima de un elemento.</dd>
-  <dt><code>margin</code></dt>
-  <dd>Determina los márgenes de un elemento. Se puede declarar un margen concreto (<code>margin-top</code> / <code>margin-right</code> / <code>margin-bottom</code> / <code>margin-left</code>), o añadir los cuatro márgenes a la vez, en el orden arriba-derecha-abajo-izquerda: <code>margin: 5px 10px 5px 20px</code>.</dd>
-  <dt><code>padding</code></dt>
-  <dd>Determina el espacio entre el límite de un elemento y su contenido. Se puede declarar un padding concreto (<code>padding-top</code> / <code>padding-right</code> / <code>padding-bottom</code> / <code>padding-left</code>), o añadir los cuatro a la vez, en el orden arriba-derecha-abajo-izquerda: <code>padding: 5px 10px 5px 20px</code>.</dd>
-  <dt><code>box-sizing</code></dt>
-  <dd>Determina el modelo de caja que se aplica al elemento. El modelo de caja por defecto es <code>content-box</code>, en el cual la anchura de un elemento es igual al <code>width</code> + <code>padding</code> + <code>border</code> (con la altura ocurre lo mismo). Si declaramos el modelo de caja <code>border-box</code>, la anchura total será la que marquemos en el <code>width</code>. Para resetear el modelo de caja en todo el documento, usa este código al principio de tu CSS: <br><code>* {box-sizing: border-box;}</code></dd>
-</dl>
-</div>
 
 <div class="main__block" id="bordes">
 <h2>Bordes</h2>
@@ -171,48 +149,6 @@ height: 20px;
 </dl>
 </div>
 
-<div class="main__block" id="layout">
-<h2>Layout</h2>
-<dl>
-  <dt><code>float</code></dt>
-  <dd>Hace que un elemento de bloque se coloque (flote) junto a otro. Se puede usar tanto <code>float: left;</code> para flotar a la izquierda, como <code>float: right;</code> para flotar a la derecha.</dd>
-  <dt><code>overflow</code></dt>
-  <dd>Con la propiedad overflow indicamos qué tiene que hacer un contenedor si su contenido se sale de su caja. Usando <code>overflow: hidden;</code> le diremos que oculte lo que se salga fuera; también es una buena forma de forzar a un contenedor a cubrir completamente a su contenido, cuando este contenido está flotando.</dd>
-  <dt><code>clear</code></dt>
-  <dd>Sirve para despejar un elemento que tiene otros elementos flotando a su lado. Se puede usar <code>clear: left;</code> para despejar el lado izquierdo, <code>clear: right;</code> para el derecho, o <code>clear: both;</code> para ambos a la vez.</dd>
-  <dt><code>clearfix</code></dt>
-  <dd>Es la técnica más popular para limpiar los floats. Para usarla, tenemos que añadir al bloque que contenga elementos que flotan esta CSS:
-<pre><code>  .contenedor:before,
-.contenedor:after {
-content: " ";
-display: table;
-}
-
-.contenedor:after {
-clear: both;
-}
-</code>
-</pre>
-  </dd>
-  <dt><code>display</code></dt>
-  <dd><p>Esta propiedad cambia la forma en la que un elemento se renderiza en la página: como un bloque (<code>display:block;</code>), como una línea (<code>display: inline;</code>), o como una mezcla (<code>display: inline-block</code>). Los elementos con <code>display: inline-block;</code> no provocan un salto de línea, pero a diferencia de los <code>display: inline;</code> aceptan propiedades como <code>margin-top</code>, <code>margin-bottom</code> o <code>height</code>.</p> <p>Si queremos ocultar un elemento, podemos usar <code>display: none;</code></p></dd>
-  <dt><code>position</code></dt>
-  <dd>
-    <p>La propiedad <code>position</code> nos permite &ldquo;sacar&rdquo; a un elemento del flujo normal de la página. Con <code>position: relative;</code> movemos un elemento respecto a su posición original. Con <code>position: absolute;</code> lo movemos absolutamente respecto a la ventana del navegador.</p>
-    <p>Para que un elemento posicionado absolutamente tenga como punto de partida un contenedor en particular en vez de la ventana del navegador, tendremos que aplicar <code>position: relative;</code> a dicho elemento.</p>
-    <p>Para desplazar un elemento posicionado relativamente o absolutamente, usaremos las propiedades <code>top</code>, <code>bottom</code>, <code>left</code> o <code>right</code>, generalmente solo una de cada eje (declarar <code>top</code> y <code>bottom</code> a la vez, por ejemplo, no siempre dará el resulado que esperamos).</p>
-    <p>Cuando dos elementos posicionados relativa o absolutamente se solapan, podemos usar la propiedad <code>z-index</code> para decidir cuál queda encima de cuál. Ejemplo: <code>z-index: 1;</code></p>
-  </dd>
-  <dt><code>calc()</code></dt>
-  <dd>
-    <p>La función <code>calc()</code> nos permite hacer cálculos sencillos (sumas, restas, multiplicaciones, divisiones) de valores. Aunque está bastante limitado, nos permite hacer cosas como asignar una anchura a un elemento de un 100% (u otro porcentaje) menos una cantidad en píxeles. Ejemplo: <code>width: calc(100% - 20px);</code></p>
-    <p>
-      Para que <code>calc()</code> funcione correctamente, separa los signos aritméticos con espacios.
-    </p>
-  </dd>
-
-</dl>
-</div>
 
 <div class="main__block" id="background">
 <h2>Background</h2>
@@ -355,7 +291,7 @@ clear: both;
 </div>
 
 <div class="main__block" id="columnas">
-<h2>Columnas</h2>
+<h2>Columnas de texto</h2>
 <dl>
   <dt><code>column-count</code></dt>
   <dd><p>Determina el número de columnas que tiene un bloque de texto (por defecto es 1). Ejemplo: <code>column-count: 3;</code></p></dd>
@@ -402,69 +338,7 @@ src:
   </dd>
 </dl>
 </div>
-<div class="main__block" id="mq">
-<h2>Media queries</h2>
-<dl>
-  <dt><code>@media</code></dt>
-  <dd>
-    <p>Las reglas <code>@media</code> sirven para englobar entre llaves una serie de estilos que solo se emplearán si la web se reproduce en un medio concreto, como en pantalla (<code>@media screen{/*CSS para pantalla*/}</code>) o impresión (<code>@media print{/*CSS para impresión*/}</code>).</p>
-  </dd>
-  <dt><code>@media</code> queries</dt>
-  <dd>
-    <p>Las queries (condiciones) son una extensión de las <code>@media</code>, que típicamente nos permitirán añadir condiciones de estilo en función de la anchura y altura del navegador. La forma normal de escribirlas es: <br> <code><pre>
-@media screen and (/* condición de altura o anchura*/){
-/* estilos para esa condición */
-}</pre></code></p>
-    <p>
-      Las condiciones más normales serán anchura mínima (<code>min-width</code>) y anchura máxima (<code>max-width</code>).
-    </p>
-    <p>
-      La forma lógica de escribir las media queries es debajo de la CSS que quieren sobreescribir, y en un orden creciente o decreciente en función de nuestra estrategia. Si hemos empezado nuestra web por el layout de escritorio, normalmente escribiremos nuestras media queries así:
-<code><pre>  .container{
-/*CSS inicial: tres columnas de contenido*/
-}
 
-@media screen and (max-width: 900px){
-.container{
-  /*CSS para dos columnas de contenido*/
-}
-}
-
-@media screen and (max-width: 650px){
-.container{
-  /*CSS para una columna de contenido*/
-}
-}
-</pre></code>
-    </p>
-    <p>
-      Si hemos empezado por el layout de móvil, el orden normal de nuestras media quieres será de menor a mayor, y usando <code>min-width</code>:
-<code><pre>  .container{
-/*CSS inicial: una columna de contenido*/
-}
-
-@media screen and (min-width: 650px){
-.container{
-  /*CSS para dos columnas de contenido*/
-}
-}
-
-@media screen and (min-width: 900px){
-.container{
-  /*CSS para tres columnas de contenido*/
-}
-}
-</pre></code>
-
-    </p>
-  </dd>
-  <dt>combinar condiciones</dt>
-  <dd>
-    <p>Las condiciones de una media query se pueden combinar, especialmente cuando nos interesa que unos estilos se apliquen solo entre un tamaño y otro, y no tener que sobreescribirlos en otra media query. Para hacer esto, sencillamente añadimos la palabra <code>and</code> y otra condición entre paréntesis, por ejemplo: <code>@media screen and (min-width: 400px) and (max-width: 800px){/*estilos que solo se aplicarán entre 400px y 800px de ancho*/}</code>.</p>
-  </dd>
-
-</dl>
-</div>
 <div class="main__block" id="trans">
 <h2>Transiciones</h2>
 <dl>
