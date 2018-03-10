@@ -35,6 +35,9 @@
 <li>
 <a href='#mq'>Media queries</a>
 </li>
+<li>
+<a href='#flexbox'>Flexbox</a>
+</li>
 </ul>
 <div class='main'>
 <div class='main__block' id='caja'>
@@ -208,6 +211,87 @@ Es la técnica más popular para limpiar los floats. Para usarla, tenemos que a�
     <p>Las condiciones de una media query se pueden combinar, especialmente cuando nos interesa que unos estilos se apliquen solo entre un tamaño y otro, y no tener que sobreescribirlos en otra media query. Para hacer esto, sencillamente añadimos la palabra <code>and</code> y otra condición entre paréntesis, por ejemplo: <code>@media screen and (min-width: 400px) and (max-width: 800px){/*estilos que solo se aplicarán entre 400px y 800px de ancho*/}</code>.</p>
   </dd>
 
+</dl>
+</div>
+
+<div class='main__block' id='flexbox'>
+<h2>Flexbox</h2>
+<dl>
+<dt><code>display: flex</code></dt>
+<dd>
+<p>
+Un espacio flexbox sirve para alinear y redistribuir contenidos a lo largo de un espacio, tanto en el eje vertical como el horizontal.
+Para crear un espacio flex, se debe asignar <code>display: flex;</code> a una etiqueta contenedora (<code>&lt;div&gt;</code> u otros). A continuación, todos los elementos que sean descencientes directos de este contenedor quedan afectados por las propiedades flex.
+</p>
+<div class='embed codepen' data-default-tab='css,result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - display: flex' data-slug-hash='qoEvGK' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>display: inline-flex</code></dt>
+<dd>
+Si queremos un espacio flex que no provoque un salto de línea (o se comporte como un bloque) podemos emplear <code>display: inline-flex;</code> en vez de <code>display: flex;</code>, que funciona de una manera equivalente a <code>display: inline-block;</code> .
+</dd>
+</dl>
+<h3>Propiedades flex del contenedor</h3>
+<dl>
+<dt><code>flex-direction</code></dt>
+<dd>
+<p>Controla el eje principal a partir del cual se ordenan los contenidos. Por defecto es <code>row</code> o fila. Podemos alterar esta dirección dándole el valor de <code>column</code>, y el eje principal pasa a ser el vertical. Además, disponemos de los valores <code>row-reverse</code> y <code>column-reverse</code>, que invierten el orden en el que aparecen los elementos en el eje horizontal o vertical, respectivamente.</p>
+<div class='embed codepen' data-default-tab='css,result' data-embed-version='2' data-height='265' data-pen-title='Flexbox - flex-direction' data-slug-hash='oqgONQ' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>flex-wrap</code></dt>
+<dd>
+<p>
+El comportamiento por defecto de un espacio flex es meter todos los elementos a lo largo del eje, forzándolos en tamaño si es necesario (es decir, por defecto tiene el valor <code>flex-wrap: nowrap</code>). Podemos cambiar este comportamiento y que los elementos que no quepan salten de línea si le indicamos <code>flex-wrap: wrap;</code> .
+Además, existe el valor <code>wrap-reverse</code>, que provocaría un salto de línea (wrap) en dirección contraria.
+</p>
+<div class='embed codepen' data-default-tab='css,result' data-embed-version='2' data-height='165' data-pen-title='Flexbox - flex-wrap' data-slug-hash='dmPLow' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>justify-content</code></dt>
+<dd>
+<p>Esta propiedad alinea los contenidos respecto al eje principal. Por defecto es <code>flex-start</code> (al principio del eje principal), pero puede ser <code>flex-end</code> (al final), <code>center</code> (centrado respecto al eje principal), <code>space-between</code> (repartiendo el espacio sobrante entre los elementos) o <code>space-around</code> (repartiendo el espacio sobrante al principio y al final de cada elemento).</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='280' data-pen-title='Flexbox - justify-content' data-slug-hash='WzbWwG' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>align-items</code></dt>
+<dd>
+<p>Con esta propiedad podemos indicar cómo se alinean los elementos en el eje cruzado (es decir, el que no es el principal). El valor por defecto es <code>stretch</code>, es decir, estirar los elementos para que ocupen todos lo mismo en el eje cruzado. También podemos indicar los valores <code>flex-start</code> (alineado al principio de la caja), <code>flex-end</code> (al final de la caja), <code>center</code> (centrado) y <code>baseline</code> (alineado con la línea base del texto).</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='380' data-pen-title='Flexbox - align-items' data-slug-hash='GxgLrR' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>align-content</code></dt>
+<dd>
+Cuando una caja tiene más de una línea de contenido (gracias a la propiedad <code>flex-wrap: wrap;</code>) y tiene espacio sobrante, podemos dar instrucciones específicas de alineación en el eje cruzado con la propiedad <code>align-content</code>. El valor por defecto es <code>strech</code> (estirar), pero de manera equivalente a <code>align-items</code>, podemos dar los valores <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code> o <code>space-around</code>.
+</dd>
+</dl>
+<h3>Propiedades flex del contenido</h3>
+<dl>
+<dt><code>flex-grow</code></dt>
+<dd>
+<p>Esta propiedad hace que un elemento crezca cuando sobre espacio en una caja flex. El valor por defecto es <code>0</code>, pero podemos poner <code>1</code> o un valor positivo superior (sin unidad, no son "px" o similar). Si hay varios elementos con un valor positivo, los que tengan un valor superior tenderán a ocupar más espacio sobrante.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - flex-grow' data-slug-hash='JLoVOx' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>flex-basis</code></dt>
+<dd>
+<p>Esta propiedad indica un tamaño deseado (en píxeles, porcentaje u otra unidad) para un elemento en el eje principal de una caja flex. Funciona de una manera equivalente a <code>width</code> o <code>height</code>, dependiendo de cuál sea el eje principal.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - flex-basis' data-slug-hash='bvNJoB' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>flex-shrink</code></dt>
+<dd>
+<p>Esta propiedad indica la proporción con la que un elemento se reduce en el eje principal cuando no hay suficiente espacio (es el equivalente inverso de <code>flex-grow</code>). Por defecto, el valor de todos los elementos es <code>1</code>. Se puede aumentar este valor para que un elemento se reduzca más que el resto, o se puede poner a <code>0</code> para que un elemento nunca se reduzca.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - flex-shrink' data-slug-hash='KowYZX' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>order</code></dt>
+<dd>
+<p>Podemos cambiar el orden en el que aparecen los elementos en una caja flex con la propiedad <code>order</code>. Todos los elementos tienen un <code>order: 0</code> por defecto, por lo que valores inferiores a 0 harán que un elemento se coloque al principio de la caja, y valores superiores a 0 harán que tienda a colocarse al final.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - order' data-slug-hash='wmBZmo' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt><code>align-self</code></dt>
+<dd>
+<p>Un elemento puede cambiar la alineación en el eje cruzado que tiene por defecto (la que viene dada por el contenedor). Podemos sobreescribir el valor por defecto (que es <code>auto</code>) con los valores <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code> o <code>stretch</code>.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='350' data-pen-title='Flexbox - alineación alternativa eje cruzado' data-slug-hash='ZxYZjR' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
+<dt>Alineación de un elemento en el eje principal</dt>
+<dd>
+<p>No existe una propiedad para cambiar la alineación de un elemento en el eje principal (y que se alinee de forma diferente al resto), pero podemos utilizar márgenes con valor <code>auto</code> para simular esto. Por ejemplo, en un espacio con dirección <code>row</code> que todos los elementos estén alineados al principio de la caja (alineación <code>flex-start</code>), podríamos darle al último elemento un <code>margin-left: auto;</code> para que se colocara al final de la caja y simular una alineación <code>flex-end</code>.</p>
+<div class='embed codepen' data-default-tab='result' data-embed-version='2' data-height='150' data-pen-title='Flexbox - alineación alternativa eje principal' data-slug-hash='gebyKr' data-theme-id='0' data-user='htmlboy'></div>
+</dd>
 </dl>
 </div>
 

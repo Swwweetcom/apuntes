@@ -468,7 +468,10 @@ dt {
   margin-bottom: 10px; }
 
 dd {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  margin-left: 0; }
+  dd p {
+    margin-top: 0; }
 
 code, pre {
   font-family: "source code", monospace; }
@@ -618,5 +621,4 @@ a:hover {
   display: block; }
 
 .embed {
-  margin-left: 0;
   background-color: #1d1f20; }
