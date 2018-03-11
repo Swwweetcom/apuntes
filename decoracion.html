@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Apuntes de desarrollo web - HTML, CSS y JS</title>
+    <link href="stylesheets/site.css" rel="stylesheet" />
+    <!-- <link rel="icon" type="image/png" href="/images/favicon.png"> -->
+  </head>
+  <body>
+    
+
+      <div class="topbar">
+  <a href="index.html" class="back">Atrás</a>
+  <h1>Decoración y animación</h1>
+</div>
+<ul class="index">
+  <li><a href=#degradados>Degradados</a></li>
+  <li><a href=#sombras>Sombras</a></li>
+  <li><a href=#trans>Transiciones</a></li>
+  <li><a href=#transfo>Transformaciones</a></li>
+  <li><a href=#anim>Animaciones</a></li>
+</ul>
+
+<div class="main">
+  <div class="main__block" id="degradados">
+<h2>Degradados</h2>
+<dl>
+  <dt><code>linear-gradient</code></dt>
+  <dd><p>Un degradado lineal es la forma más habitual de degradado (de un punto a otro siguiendo una línea recta y con dos o más colores). Todos los degradados se tratan como imágenes de fondo, y se declaran en la propiedad <code>background-image</code> o <code>background</code>.</p>
+    <p>La forma de escribirnos es declarando el ángulo (en grados) o la dirección y los diferentes colores de corte.</p>
+    <p>Ejemplo de degradado entre dos colores de arriba abajo:<br>
+      <code>div{background-image: linear-gradient(180deg, yellow, blue);}</code>
+    </p>
+    <p>Ejemplo de degradado entre varios colores, en diagonal:<br>
+      <code>div{background-image: linear-gradient(to bottom right, yellow 0%, blue 10%, red 50%, purple 100%);}</code>
+    </p>
+  </dd>
+  <dt><code>radial-gradient</code></dt>
+  <dd>
+    <p>
+      Un degradado radial o en forma cicular se declara indicando el tamaño (si queremos), forma (<code>circle</code> o <code>ellipse</code>), posición del vértice, cortes de color.
+    </p>
+    <p>
+      Ejemplo de degradado circular posicionado en la esquina superior derecha entre dos colores:<br>
+      <code>background-image: radial-gradient(circle at right top, yellow, blue);</code>
+    </p>
+    <p>
+      Ejemplo de degradado elíptico centrado entre 4 colores:<br>
+      <code>background-image: radial-gradient(ellipse at center, yellow 10%, blue 20%, green 50%, brown 100%);</code>
+    </p>
+  </dd>
+  <dt><code>repeating-linear-gradient</code></dt>
+  <dd><p>Este tipo de degradado nos permite crear un patrón o degradado que se repite de forma continua. Ejemplo: <code>repeating-linear-gradient(180deg, #1ac6cc, #1ac6cc 7%, #646464 10%)</code>.</p>
+    <p>La forma de que tenga espacio para repetirse es no declarar el 100% del espacio que ocuparán los colores (en el ejemplo anterior, tenemos hasta el 10%), o bien usar unidades absolutas (píxeles).</p>
+  </dd>
+</dl>
+</div>
+  <div class="main__block" id="sombras">
+<h2>Sombras</h2>
+<dl>
+  <dt><code>box-shadow</code></dt>
+  <dd>
+    <p>La forma de declarar sombras en un elemento es con la propiedad <code>box-shadow</code>. Los valores que se introducen son el desplazamiento de la sombra en el eje x, el desplazamiento en el eje y, la difuminación de la sombra, el spread (un espacio de color sólido antes de que empiece el difuminado; es opcional) y el color de la sombra. Además, si usamos la propiedad <code>inset</code>, la sombra se renderizará por dentro del elemento en vez de por fuera.</p>
+    <p>Ejemplo de sombra normal:<br>
+      <code>box-shadow: 5px 5px 3px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Ejemplo de sombra con spread:<br>
+      <code>box-shadow: 5px 5px 3px 2px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Ejemplo de sombra con <code>inset</code>:<br>
+      <code>box-shadow: inset 5px 5px 3px rgba(0, 0, 0, .4);</code>
+    </p>
+    <p>Un elemento puede tener más de una sombra, que se posicionan una debajo de la otra. Ejemplo: <br>
+      <code>box-shadow: 0 5px 0 lightblue, 0 10px 0 hotpink;</code>
+    </p>
+  </dd>
+  <dt><code>text-shadow</code></dt>
+  <dd>
+    <p>La forma de declarar una sombra de texto es igual que la de <code>box-shadow</code>, con la única diferencia de que en <code>text-shadow</code> no existe el inset (no se puede renderizar la sombra por dentro del texto).</p>
+    <p>Ejemplo: <code>text-shadow: 2px 2px 3px rgba(0, 0, 0, .4);</code></p>
+  </dd>
+</dl>
+</div>
+  <div class="main__block" id="trans">
+<h2>Transiciones</h2>
+<dl>
+  <dt><code>transition</code></dt>
+  <dd>
+    Para añadir una transición a un elemento en un cambio de estado (por ejemplo, <code>:hover</code> o cuando se le añade o quita una clase), usaremos <code>transition</code>, declarando el tiempo que durará la transición en segundos o milisegundos y la propiedad a transicionar (por defecto, <code>all</code>).<br>Ejemplo: <code>a{transition: .4s background-color;}</code>
+  </dd>
+</dl>
+</div>
+  <div class="main__block" id="transfo">
+<h2>Transformaciones</h2>
+<dl>
+  <dt><code>transform</code></dt>
+  <dd>
+    Permite modificar el aspecto o posición de un elemento sin alterar su entorno (por ejemplo, hacer algo más grande sin mover los elementos de alrededor). Los tipos de transformación habituales son <code>translate()</code>, <code>scale()</code>, <code>rotate()</code>, <code>skewX()</code> y <code>skewY()</code>.
+  </dd>
+  <dt><code>transform: translate()</code></dt>
+  <dd>
+    Desplaza a un elemento en el eje X y el eje Y. Ejemplo:
+<pre><code>  .ejemplo{
+transform: translate(10px, 20px);
+}</code></pre>
+  </dd>
+  <dt><code>transform: scale()</code></dt>
+  <dd>
+    Altera el tamaño de un elemento en base a 1. Ejemplo:
+<pre><code>  .ejemplo{
+transform: scale(1.5);
+}</code></pre>
+  </dd>
+  <dt><code>transform: rotate()</code></dt>
+  <dd>
+    Gira un elemento a partir de su centro, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: rotate(15deg);
+}</code></pre>
+  </dd>
+  <dt><code>transform: skewX()</code></dt>
+  <dd>
+    Deforma un elemento sobre el eje X, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: skewX(15deg);
+}</code></pre>
+  </dd>
+  <dt><code>transform: skewY()</code></dt>
+  <dd>
+    Deforma un elemento sobre el eje Y, expresado en grados (<code>deg</code>). Ejemplo:
+<pre><code>  .ejemplo{
+transform: SkewY(15deg);
+}</code></pre>
+  </dd>
+</dl>
+</div>
+  <div class="main__block" id="anim">
+<h2>Animaciones</h2>
+<dl>
+  <dt>Animaciones CSS</dt>
+  <dd>
+    <p>
+      Las animaciones permiten hacer movimientos y transiciones sencillas en elementos web, sin necesidad de interacción por parte del usuario.
+    </p>
+    <p>
+      Las animaciones se definen con <code>@keyframes</code> y se asignan posteriormente a los elementos que nos interese animar.
+    </p>
+    <p>
+      Algunos navegadores pueden necesitar todavía que declares las animaciones con su prefijo (<code>-webkit</code>, <code>-moz</code>, etc). Compruébalo en <a href="http://caniuse.com">Can I Use</a>.
+    </p>
+  </dd>
+  <dt><code>@keyframes</code></dt>
+  <dd>
+    <p>
+      Define los pasos que seguirá una animación, y le da un nombre para poderse referir a ella más adelante.
+    </p>
+    <p>
+      Los estilos de cada paso de la animación se engloban entre <code>{}</code>. Los pasos pueden indicarse con <code>from</code> y <code>to</code>, si son solo dos, o con <code>%</code>.
+    </p>
+    <p>Ejemplo:
+<pre><code>  @keyframes ejemplo{
+0%{
+  width: 20px;
+}
+20%{
+  width: 50px;
+}
+80%{
+  width: 90px;
+}
+100%{
+  width: 240px;
+}
+}</code></pre>
+    </p>
+  </dd>
+  <dt><code>animation</code></dt>
+  <dd>
+    <p>
+      Esta propiedad permite asignar una animación a un elemento, indicando en este orden: nombre de la animación, duración en segundos (s) o milisegundos (ms), velocidad (linear, ease-in, ease-out, ease-in-out), retraso en empezar, repeticiones, dirección en la que se produce (<code>normal</code>, <code>reverse</code>, o <code>alternate</code> si queremos que cambie con cada repetición).	Tienes algunas opciones más en la <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">Mozilla Developer Network</a>.
+    </p>
+    <p>
+      Un ejemplo de asignación de animación:
+<pre><code>  .elemento{
+animation: ejemplo 3s ease-out 3s 3 alternate;
+}</code></pre>
+    </p>
+  </dd>
+</dl>
+</div>
+</div>
+
+
+    
+    
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  </body>
+</html>

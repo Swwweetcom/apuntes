@@ -14,7 +14,7 @@
 
       <div class="topbar">
   <a href="index.html" class="back">Atrás</a>
-  <h1>Propiedades CSS</h1>
+  <h1>CSS básico</h1>
 </div>
 <ul class="index">
   <li><a href=#selectores>Selectores</a></li>
@@ -23,19 +23,14 @@
   <li><a href=#bordes>Bordes</a></li>
   <li><a href=#background>Background</a></li>
   <li><a href=#color>Color</a></li>
-  <li><a href=#degradados>Degradados</a></li>
-  <li><a href=#sombras>Sombras</a></li>
   <li><a href=#texto>Texto</a></li>
   <li><a href=#listas>Listas</a></li>
   <li><a href=#columnas>Columnas de texto</a></li>
   <li><a href=#webfonts>Webfonts</a></li>
-  <li><a href=#trans>Transiciones</a></li>
-  <li><a href=#transfo>Transformaciones</a></li>
-  <li><a href=#anim>Animaciones</a></li>
 </ul>
 
 <div class="main">
-<div class="main__block" id="selectores">
+  <div class="main__block" id="selectores">
 <h2>Selectores</h2>
 
 <dl>
@@ -81,7 +76,7 @@ color: red;
 }</pre></code></dd>
 </dl>
 </div>
-<div class="main__block" id="pseudoclases">
+  <div class="main__block" id="pseudoclases">
 <h2>Pseudo-clases</h2>
 
 <dl>
@@ -109,7 +104,7 @@ color: red;
     </p>
 </dl>
 </div>
-<div class="main__block" id="pseudoelementos">
+  <div class="main__block" id="pseudoelementos">
 <h2>Pseudo-elementos</h2>
 
 <dl>
@@ -132,8 +127,7 @@ height: 20px;
   </dd>
 </dl>
 </div>
-
-<div class="main__block" id="bordes">
+  <div class="main__block" id="bordes">
 <h2>Bordes</h2>
 <dl>
   <dt><code>border-width</code></dt>
@@ -148,9 +142,7 @@ height: 20px;
   <dd>Determina el radio de redondeado de las esquinas de un elemento. Se puede dar el mismo radio a todas las esquinas: <code>boder-radius: 5px;</code> o uno diferente a cada una: <code>border-radius: 5px 10px 5px 0;</code>. En este último caso, el orden en que se aplica es esquina superior izquierda, superior derecha, inferior derecha, inferior izquierda.</dd>
 </dl>
 </div>
-
-
-<div class="main__block" id="background">
+  <div class="main__block" id="background">
 <h2>Background</h2>
 <dl>
   <dt><code>background-color</code></dt>
@@ -172,7 +164,7 @@ height: 20px;
   <dd>Los estilos de fondo se pueden aplicar bajo una única declaración "shorthand": primero la imagen, después la posición, después la repetición y por último el color. Ejemplo: <code>background: url(images/bg.jpg) right center no-repeat #CCCCCC;</code>.</dd>
 </dl>
 </div>
-<div class="main__block" id="color">
+  <div class="main__block" id="color">
 <h2>Color</h2>
 <dl>
   <dt>Nombre</dt>
@@ -185,7 +177,7 @@ height: 20px;
   <dd>Los colores se pueden utilizar indicando sus valores de tono, saturación, luminosidad y alfa. El tono indica el punto en el que se encuentra el color en la rueda de color, y se expresa con un valor (grado) comprendido entre 0 y 360. La saturación se expresa con un porcentaje, donde 0% es gris y 100% es el color en su máxima saturación. La luminosidad se exprea con un porcentaje, donde 0% es negro, 50% es el color puro y 100% es blanco. El canal alfa indica la cantidad de transparencia que tendrá el color, y se expresa en base 1. Ejemplo: <code>background-color: hsla(310, 100%, 50%, .8);</code>. Esta herramienta te puede ayudar con este tipo de colores: <a href="http://hslpicker.com/">http://hslpicker.com</a>.</dd>
 </dl>
 </div>
-<div class="main__block" id="degradados">
+  <div class="main__block" id="degradados">
 <h2>Degradados</h2>
 <dl>
   <dt><code>linear-gradient</code></dt>
@@ -218,7 +210,7 @@ height: 20px;
   </dd>
 </dl>
 </div>
-<div class="main__block" id="sombras">
+  <div class="main__block" id="sombras">
 <h2>Sombras</h2>
 <dl>
   <dt><code>box-shadow</code></dt>
@@ -244,8 +236,7 @@ height: 20px;
   </dd>
 </dl>
 </div>
-
-<div class="main__block" id="texto">
+  <div class="main__block" id="texto">
 <h2>Texto</h2>
 <dl>
   <dt><code>font-family</code></dt>
@@ -272,8 +263,7 @@ height: 20px;
   </dd>
 </dl>
 </div>
-
-<div class="main__block" id="listas">
+  <div class="main__block" id="listas">
 <h2>Listas</h2>
 <dl>
   <dt><code>list-style</code></dt>
@@ -289,8 +279,7 @@ height: 20px;
   </dd>
 </dl>
 </div>
-
-<div class="main__block" id="columnas">
+  <div class="main__block" id="columnas">
 <h2>Columnas de texto</h2>
 <dl>
   <dt><code>column-count</code></dt>
@@ -301,7 +290,7 @@ height: 20px;
   <dd><p>Determina los estilos para una línea de separación entre las columnas. Se declara de manera similar a los bordes: primero el ancho (que puede ser <code>thin</code>, <code>medium</code>, <code>thick</code>, o de un grosor específico), después el estilo (como en los bordes: <code>solid</code>, <code>dashed</code>, <code>dotted</code> o <code>double</code>) y, por último, el color. Ejemplo: <code>column-rule: 1px solid black;</code></p></dd>
 </dl>
 </div>
-<div class="main__block" id="webfonts">
+  <div class="main__block" id="webfonts">
 <h2>Webfonts</h2>
 <dl>
   <dt><code>@font-face</code></dt>
@@ -338,8 +327,7 @@ src:
   </dd>
 </dl>
 </div>
-
-<div class="main__block" id="trans">
+  <div class="main__block" id="trans">
 <h2>Transiciones</h2>
 <dl>
   <dt><code>transition</code></dt>
@@ -348,7 +336,7 @@ src:
   </dd>
 </dl>
 </div>
-<div class="main__block" id="transfo">
+  <div class="main__block" id="transfo">
 <h2>Transformaciones</h2>
 <dl>
   <dt><code>transform</code></dt>
@@ -392,7 +380,7 @@ transform: SkewY(15deg);
   </dd>
 </dl>
 </div>
-<div class="main__block" id="anim">
+  <div class="main__block" id="anim">
 <h2>Animaciones</h2>
 <dl>
   <dt>Animaciones CSS</dt>
