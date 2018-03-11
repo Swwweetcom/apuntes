@@ -1,0 +1,28 @@
+<div class="main__block" id="pseudoclases">
+<h2>Pseudo-clases</h2>
+
+<dl>
+  <dt><code>:hover</code></dt>
+  <dd>Indica el estado de un elemento (normalmente, un link) cuando pasamos el ratón por encima. Ejemplo: <code>a:hover{color: blue;}</code></dd>
+  <dt><code>:active</code></dt>
+  <dd>Indica el estado de un elemento (normalmente, un link o un botón) cuando lo presionamos. Ejemplo: <code>a:active{border: none;}</code></dd>
+  <dt><code>:focus</code></dt>
+  <dd>Indica el estado de un elemento accionable (normalmente, un link o un botón) cuando tiene el foco (el efecto al navegar con el tabulador entre links). Ejemplo: <code>a:focus{outline: 2px dashed blue;}</code></dd>
+  <dt><code>:visited</code></dt>
+  <dd>Indica un link que ya ha sido visitado. Ejemplo: <code>a:visited{color: grey;}</code></dd>
+  <dt><code>:first-child</code></dt>
+  <dd>Se refiere al primer elemento dentro de un contenedor en concreto. Ejemplo: <code>.articulo p:first-child{font-size: 20px;}</code></dd>
+  <dt><code>:last-child</code></dt>
+  <dd>Se refiere al último elemento dentro de un contenedor en concreto. Ejemplo: <code>.listado li:last-child{border-bottom: none;}</code></dd>
+  <dt><code>:nth-child()</code></dt>
+  <dd><p>
+      Se usa para seleccionar un elemento concreto en una lista de varios.
+    </p>
+    <p>
+      Si indicamos un número (ejemplo: <code>p:nth-child(3)</code>, nos referimos a ese número de elemento en particular. Si añadimos la letra <code>n</code> (ejemplo: <code>li:nth-child(3n)</code>), indicamos repetición, cada "n" elementos.
+    </p>
+    <p>
+      Si queremos usar <code>:nth-child</code> con repetición, pero queremos que empiece a contar desde un elemento distinto al primero, podemos modificarlo sumando o restando números. Ejemplo: <code>li:nth-child(4n+2)</code>.
+    </p>
+</dl>
+</div>
