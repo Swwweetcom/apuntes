@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Introducción a JavaScript</title>
+
+  <link rel="stylesheet" href="../revealjs/css/reveal.css">
+  <link rel="stylesheet" href="../revealjs/css/theme/moon.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../revealjs/css/print/pdf.css' :
+      '../revealjs/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+  <body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+<h1>Introducción a JavaScript</h1>
+</section>
+<section>
+<h2>JavaScript es un lenguaje de programación</h2>
+<p>
+Programamos comportamientos: ˝cuando se hace click aquí, ocurre algo˝.
+</p>
+</section>
+<section>
+<h2>Funciones</h2>
+<ul>
+<li>acceder al contenido de una web</li>
+<li>modificar el contenido de una web</li>
+<li>programar reglas</li>
+<li>reaccionar a eventos</li>
+</ul>
+</section>
+<section>
+<h2>Ejemplo</h2>
+<p>
+˝Si yo hago click…˝
+</p>
+<p>
+˝en un elemento que tenga la clase 'elemento'…˝
+</p>
+<p>
+˝…quita o ponle la clase 'activo', en función de si la tiene o no˝
+</p>
+</section>
+<section>
+<p class='codepen' data-default-tab='js,result' data-embed-version='2' data-height='500' data-pen-title='JS - Cambia clase ' data-slug-hash='JLRqbJ' data-theme-id='0' data-user='htmlboy'>
+See the Pen
+<a href='https://codepen.io/htmlboy/pen/JLRqbJ/'>JS - Cambia clase</a>
+by Javier Usobiaga (
+<a href='https://codepen.io/htmlboy'>@htmlboy</a>)
+<a href='https://codepen.io'>CodePen</a>.
+</p>
+</section>
+
+    </div>
+  </div>
+
+  <script src="../revealjs/lib/js/head.min.js"></script>
+  <script src="../revealjs/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: '../revealjs/plugin/markdown/marked.js'
+        },
+        {
+          src: '../revealjs/plugin/markdown/markdown.js'
+        },
+        {
+          src: '../revealjs/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: '../revealjs/plugin/highlight/highlight.js',
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+
+</html>
