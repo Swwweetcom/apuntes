@@ -5,13 +5,15 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   background-color: white;
+  display: flex;
   padding: 0.2rem;
   border-radius: 1.5em;
 
   a,
   span {
-    padding: 0.3em 0.8em;
+    padding: 0 0.7em;
     color: inherit;
+    display: block;
   }
   .is-active {
     background-color: $headbgcolor;
