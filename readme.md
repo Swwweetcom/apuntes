@@ -1,5 +1,19 @@
-## Publicar
+# Apuntes
 
-`rake build  # Compile all files into the build directory`
+Notes and documentation for my introductory HTML, CSS and JS classes. Contents in Spanish.
 
-`rake publish  # Build and publish to Github Pages`
+Site built with <a href="https://middlemanapp.com/">Middleman</a>. Slides built with <a href="https://github.com/hakimel/reveal.js">Reveal.js</a>.
+
+## Development
+
+Install Middleman: `gem install middleman`
+
+Install dependencies: `bundle install`
+
+Run: `bundle exec middleman`
+
+## Publish with Github Pages
+
+`rake build # Compile all files into the build directory`
+
+`rake publish # Build and publish to Github Pages`
