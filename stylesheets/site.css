@@ -538,12 +538,14 @@ a:hover {
   font-size: 0.7rem;
   text-transform: uppercase;
   background-color: white;
+  display: flex;
   padding: 0.2rem;
   border-radius: 1.5em; }
   .switcher a,
   .switcher span {
-    padding: 0.3em 0.8em;
-    color: inherit; }
+    padding: 0 0.7em;
+    color: inherit;
+    display: block; }
   .switcher .is-active {
     background-color: #72ae95;
     color: white;
@@ -572,13 +574,17 @@ a:hover {
 
 .intro {
   margin: 0 calc(var(--spacing) * -1);
-  padding: 2rem var(--spacing) 2rem calc( var(--spacing) - 10px);
+  padding: 3rem var(--spacing) 2rem calc(var(--spacing) - 10px);
   margin-bottom: 3rem;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: #72ae95;
   border-left: 10px solid #f5886b;
   color: #fafafa; }
+  @media (min-width: 37.5rem) {
+    .intro {
+      font-size: 3rem;
+      padding-top: 2rem; } }
 
 .section-intro {
   margin-bottom: 4rem; }
