@@ -139,8 +139,8 @@ Backtrace:
 /Users/usobiaga/.rvm/gems/ruby-2.4.1/gems/middleman-cli-4.2.1/bin/middleman:70:in `<top (required)>'
 /Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/middleman:23:in `load'
 /Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/middleman:23:in `<main>'
-/Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `eval'
-/Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:15:in `<main>'
+/Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:24:in `eval'
+/Users/usobiaga/.rvm/gems/ruby-2.4.1/bin/ruby_executable_hooks:24:in `<main>'
 */
 body:before {
   white-space: pre;
