@@ -1,0 +1,46 @@
+<div class="main__block" id="selectores">
+<h2>Selectores</h2>
+
+<dl>
+  <dt>Selector universal <code>*</code></dt>
+  <dd>El selector <code>*</code> se aplica a todos los elementos de un documento. Dependiendo de cómo lo usemos, puede llegar a afectar un poco al rendimiento de la página.</dd>
+  <dt>Selector de elemento</dt>
+  <dd>Para aplicar estilos a un elemento (por ejemplo, a todos los párrafos <code>&#60;p&#62;</code>), se ultiliza el selector de elemento.<br/>
+  Ejemplo:<br/>
+  <code><pre>  p {
+color: black;
+}</pre></code></dd>
+  <dt>Selector de id</dt>
+  <dd>Para aplicar estilos a un <code>id</code> (por ejemplo <code>&#60;div id="importante"&#62;</code>), se ultiliza el selector de id <code>#</code>.<br/>
+  Ejemplo:<br/>
+  <code><pre>  #importante {
+color: red;
+}</pre></code></dd>
+  <dt>Selector de clase</dt>
+  <dd>Para aplicar estilos a un <code>class</code> (por ejemplo <code>&#60;div class="frecuente"&#62;</code>), se ultiliza el selector de clase&nbsp;<code>.</code>.<br/>
+  Ejemplo:<br/>
+  <code><pre>  .frecuente {
+color: blue;
+}</pre></code></dd>
+
+  <dt>Selector de descendiente</dt>
+  <dd>Para aplicar estilos a un elemento que es hijo de otro, es decir, que está debajo en el árbol del documento, no importa cuántos niveles por debajo.<br/>
+  Ejemplo<br/>
+  <code><pre>  &#60;div id="importante"&#62;
+&#60;p&#62;Un párrafo con texto &#60;span&#62;destacado&#60;/span&#62;.&#60;/p&#62;
+&#60;/div&#62;</pre></code>
+  <code><pre>  #importante span {
+color: red;
+}</pre></code></dd>
+
+  <dt>Selector de hijo directo</dt>
+  <dd>Para aplicar estilos a un elemento que es hijo directo de otro, es decir, que está inmediamente debajo en el árbol del documento, se utiliza el selector de hijo <code>&#62;</code>.<br/>
+  Ejemplo<br/>
+  <code><pre>  &#60;div id="importante"&#62;
+&#60;p&#62;Un párrafo&#60;/p&#62;
+&#60;/div&#62;</pre></code>
+  <code><pre>  #importante &#62; p {
+color: red;
+}</pre></code></dd>
+</dl>
+</div>

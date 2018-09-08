@@ -1,0 +1,33 @@
+<div class="main__block" id="degradados">
+<h2>Degradados</h2>
+<dl>
+  <dt><code>linear-gradient</code></dt>
+  <dd><p>Un degradado lineal es la forma más habitual de degradado (de un punto a otro siguiendo una línea recta y con dos o más colores). Todos los degradados se tratan como imágenes de fondo, y se declaran en la propiedad <code>background-image</code> o <code>background</code>.</p>
+    <p>La forma de escribirnos es declarando el ángulo (en grados) o la dirección y los diferentes colores de corte.</p>
+    <p>Ejemplo de degradado entre dos colores de arriba abajo:<br>
+      <code>div{background-image: linear-gradient(180deg, yellow, blue);}</code>
+    </p>
+    <p>Ejemplo de degradado entre varios colores, en diagonal:<br>
+      <code>div{background-image: linear-gradient(to bottom right, yellow 0%, blue 10%, red 50%, purple 100%);}</code>
+    </p>
+  </dd>
+  <dt><code>radial-gradient</code></dt>
+  <dd>
+    <p>
+      Un degradado radial o en forma cicular se declara indicando el tamaño (si queremos), forma (<code>circle</code> o <code>ellipse</code>), posición del vértice, cortes de color.
+    </p>
+    <p>
+      Ejemplo de degradado circular posicionado en la esquina superior derecha entre dos colores:<br>
+      <code>background-image: radial-gradient(circle at right top, yellow, blue);</code>
+    </p>
+    <p>
+      Ejemplo de degradado elíptico centrado entre 4 colores:<br>
+      <code>background-image: radial-gradient(ellipse at center, yellow 10%, blue 20%, green 50%, brown 100%);</code>
+    </p>
+  </dd>
+  <dt><code>repeating-linear-gradient</code></dt>
+  <dd><p>Este tipo de degradado nos permite crear un patrón o degradado que se repite de forma continua. Ejemplo: <code>repeating-linear-gradient(180deg, #1ac6cc, #1ac6cc 7%, #646464 10%)</code>.</p>
+    <p>La forma de que tenga espacio para repetirse es no declarar el 100% del espacio que ocuparán los colores (en el ejemplo anterior, tenemos hasta el 10%), o bien usar unidades absolutas (píxeles).</p>
+  </dd>
+</dl>
+</div>

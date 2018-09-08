@@ -1,0 +1,47 @@
+<div class="main__block" id="multimedia">
+    <h2>Elementos multimedia</h2>
+    <dl>
+      <dt><code>&#60;video&#62;</code></dt>
+      <dd>
+        <p>
+          Permite usar un reproductor de vídeo nativo. Aunque se podría usar como el tag <code>img</code>, vinculándolo con el atributo <code>src</code>, lo normal es utilizar los tags <code>&lt;source&gt;</code>, poner varios formatos de vídeo diferentes (al menos <code>.mp4</code> y <code>.webm</code>, con su <code>type</code> indicando el formato), y que el navegador escoja el formato que pueda reproducir.
+        </p>
+        <p>
+          Ejemplo:
+<pre><code>  &lt;video controls&gt;
+&lt;source src="pelicula.webm" type="video/webm"&gt;
+&lt;source src="pelicula.mp4" type="video/mp4"&gt;
+&lt;source src="pelicula.ogg" type="video/ogg"&gt;
+&lt;/video&gt;</code></pre>
+        </p>
+        <p>
+          El atributo <code>controls</code> permite que se rendericen los controles de reproducción para que el usuario pueda controlar el vídeo. Otros atributos interesantes son <code>width</code> y <code>height</code> (para darle un tamaño de reproducción al vídeo), <code>poster="ruta/de/imagen.jpg"</code> (para cargar una imagen de carátula), <code>mute</code> (el vídeo comienza sin sonido), <code>loop</code> (el vídeo se reproduce contínuamente), <code>preload</code> (el vídeo se empieza a descargar aunque el usuario no haya hecho nada) y <code>autoplay</code> (el vídeo empieza a reproducirse en cuanto carga la página).
+        </p>
+      </dd>
+      <dt><code>&#60;audio&#62;</code></dt>
+      <dd>
+        El reproductor de audio nativo comparte casi todas las características con <code>&lt;video&gt;</code>. Los formatos de audio que se emplean son <code>.mp3</code> (<code>type="audio/mp3"</code>) y <code>.ogg</code> (<code>type="audio/ogg"</code>).
+      </dd>
+      <dt><code>&#60;iframe&#62;</code></dt>
+      <dd>
+        <p>
+          Un <code>iframe</code> permite incrustar una web externa dentro de nuestra web, en un espacio definido por el <code>width</code> y el <code>height</code> que le demos. Es la forma más habitual de incorporar vídeos de un servicio externo, como Youtube.
+        </p>
+        <p>
+          Ejemplo de un vídeo con iframe de Youtube:
+<pre><code>  &lt;iframe width="560" height="315"
+src="https://www.youtube.com/embed/-qTIGg3I5y8"
+frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        </p>
+        <p>
+          Este código está utilizando <code>frameborder</code>, un atributo html anticuado para evitar que el navegador pinte un borde al <code>iframe</code>. Opcionalmente, podemos quitar este atributo y poner en nuestra CSS <code>iframe{border:0;}</code>
+        </p>
+        <p>
+          El atributo <code>allowfullscreen</code> permite que el vídeo se pueda reproducir en pantalla completa.
+        </p>
+        <p>
+          Cuando introducimos vídeos con un iframe en una web responsive, mantener las proporciones de un vídeo en todos los tamaños de pantalla es complejo. Podemos ayudarnos de herramientas como <a href="http://embedresponsively.com/">Embed Responsively</a>, que nos dan una serie de estilos ya preparados y juegan con paddings y porcentajes para simular el aspect-ratio de los vídeos.
+        </p>
+      </dd>
+    </dl>
+  </div>
