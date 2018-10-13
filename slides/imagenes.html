@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Etiquetas de texto</title>
+  <title>Imágenes</title>
 
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/moon.css">
@@ -28,61 +28,53 @@
   <div class="reveal">
     <div class="slides">
       <section>
-<h1>Etiquetas de texto</h1>
+<h1>Imágenes</h1>
 </section>
 <section>
 <h2>
-<code>&lt;p&gt;</code>
+<code>&lt;img&gt;</code>
 </h2>
+<div class='codepen' data-default-tab='html,result' data-height='300' data-slug-hash='oaGxqQ' data-theme-id='0' data-user='htmlboy'></div>
+<p>
+La etiqueta <code>&lt;img&gt;</code> se utiliza para mostrar imágenes de contenido en una web.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;br&gt;</code>
-</h2>
+<pre><code>&lt;img src="gato.jpg"&gt;</code></pre>
+<p>
+El atributo <code>src</code> sirve para indicar la ruta para llegar al archivo de la imagen, incluyendo el nombre del propio archivo.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;</code>
-</h2>
+<pre><code>&lt;img src="gato.jpg" alt="Un gato pardo"&gt;</code></pre>
+<p>
+Si la imagen tiene valor informativo, debemos poner un texto que la describa en el atributo <code>alt</code> y así podrá ser interpretada por lectores de pantalla.
+</p>
 </section>
 <section>
-<h3>
-<pre><code>&lt;h1&gt;&#x000A;  Encabezado de primer nivel&#x000A;&lt;/h1&gt;&#x000A;</code></pre>
-</h3>
+<pre><code>&lt;img src="imagen.jpg" alt=""&gt;</code></pre>
+<p>
+Si la imagen no tiene valor informativo, debemos dejar el atributo <code>alt</code> vacío.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;<br>
-&lt;h2&gt;<br>
-&lt;h3&gt;<br>
-&lt;h4&gt;<br>
-&lt;h5&gt;<br>
-&lt;h6&gt;</code>
-</h2>
+<pre><code>&lt;img src="imagenes/gato.jpg" alt=""&gt;</code></pre>
+<p>
+Si una imagen se encuentra dentro de una carpeta respecto a la página (archivo HTML) que la llama, se debe poner el nombre de la carpeta.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;em&gt;</code>
-</h2>
+<img alt='' src='imagenes-content/arbol-carpetas.png'>
+<p>
+Si la carpeta de imágenes se encuentra en un nivel de carpetas superior respecto al archivo HTML, usaremos dos puntos (<code>..</code>) para subir un nivel de carpetas.
+</p>
+<pre><code>&lt;img src="../imagenes/gato.jpg" alt=""&gt;&#x000A;</code></pre>
 </section>
 <section>
-<pre><code>&lt;p&gt;&#x000A;  Podemos dar énfasis <em>a palabras en concreto</em>.&#x000A;&lt;/p&gt;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;strong&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  O bien pdemos dar <strong>importancia</strong>&#x000A;  a palabras en concreto.&#x000A;&lt;/p&gt;&#x000A;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;span&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  El <span class="rojo">span</span>&#x000A;  nos sirve para acotar palabras en concreto.&#x000A;&lt;/p&gt;</code></pre>
+<pre><code>&lt;img src="../../imagenes/gato.jpg" alt=""&gt;</code></pre>
+<p>
+Para cada nivel de carpetas que queramos subir, añadiremos dos puntos más.
+</p>
 </section>
 
     </div>

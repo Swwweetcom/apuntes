@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Etiquetas de texto</title>
+  <title>Etiquetas de bloque</title>
 
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/moon.css">
@@ -28,61 +28,37 @@
   <div class="reveal">
     <div class="slides">
       <section>
-<h1>Etiquetas de texto</h1>
+<h1>Etiquetas de bloque</h1>
 </section>
 <section>
-<h2>
-<code>&lt;p&gt;</code>
-</h2>
+<pre><code>&lt;em&gt; &lt;strong&gt; &lt;span&gt; &lt;a&gt; &lt;img&gt;</code></pre>
+<p>
+Estas etiquetas son de línea (no provocan un salto del contenido a continuación).
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;br&gt;</code>
-</h2>
+<pre><code>&lt;p&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; …</code></pre>
+<p>
+Estas etiquetas son de bloque (provocan un salto de línea), pero están preparadas para contener textos (no otros bloques).
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;</code>
-</h2>
+<pre><code>&lt;div&gt;</code></pre>
+<p>
+Esta etiqueta de bloque sirve para crear estructuras, bloques y agrupaciones de bloques.
+</p>
 </section>
 <section>
-<h3>
-<pre><code>&lt;h1&gt;&#x000A;  Encabezado de primer nivel&#x000A;&lt;/h1&gt;&#x000A;</code></pre>
-</h3>
+<pre><code><div class="cabecera">&#x000A;  <h1>Titular</h1>&#x000A;  <p>Contenido</p>&#x000A;</div></code></pre>
+<p>
+Podemos agrupar contenidos en un <code>&lt;div&gt;</code> y aplicarles estilos con una clase.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;<br>
-&lt;h2&gt;<br>
-&lt;h3&gt;<br>
-&lt;h4&gt;<br>
-&lt;h5&gt;<br>
-&lt;h6&gt;</code>
-</h2>
-</section>
-<section>
-<h2>
-<code>&lt;em&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  Podemos dar énfasis <em>a palabras en concreto</em>.&#x000A;&lt;/p&gt;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;strong&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  O bien pdemos dar <strong>importancia</strong>&#x000A;  a palabras en concreto.&#x000A;&lt;/p&gt;&#x000A;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;span&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  El <span class="rojo">span</span>&#x000A;  nos sirve para acotar palabras en concreto.&#x000A;&lt;/p&gt;</code></pre>
+<pre><code><div class="cabecera">&#x000A;  <h1>Titular</h1>&#x000A;  <p>Contenido</p>&#x000A;  <div class="destacado">&#x000A;    <p>Texto destacado</p>&#x000A;    <p>Texto destacado</p>&#x000A;  </div>&#x000A;</div></code></pre>
+<p>
+Los <code>&lt;div&gt;</code> pueden agruparse unos dentro de otros para crear estructuras más complejas.
+</p>
 </section>
 
     </div>

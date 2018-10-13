@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Etiquetas de texto</title>
+  <title>Sintaxis CSS</title>
 
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/moon.css">
@@ -28,61 +28,38 @@
   <div class="reveal">
     <div class="slides">
       <section>
-<h1>Etiquetas de texto</h1>
+<h1>Sintaxis CSS</h1>
 </section>
 <section>
-<h2>
-<code>&lt;p&gt;</code>
-</h2>
+<pre><code>&lt;link rel="stylesheet" href="estilos.css" &gt;</code></pre>
+<p>
+Vincularemos una hoja de estilos a un archivo HTML a través de la etiqueta <code>&lt;link&gt;</code>.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;br&gt;</code>
-</h2>
+<pre><code>selector {&#x000A;  propiedad: valor;&#x000A;}</code></pre>
+<p>
+Escribimos las reglas de CSS siguiendo el esquema <code>selector { propiedad: valor; }</code>. Cada instrucción se finaliza con un punto y coma. Todas las instrucciones englobadas entre llaves afectan a dicho selector.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;</code>
-</h2>
+<div class='codepen' data-default-tab='css,result' data-height='200' data-slug-hash='rqGLyq' data-theme-id='0' data-user='htmlboy'></div>
 </section>
 <section>
-<h3>
-<pre><code>&lt;h1&gt;&#x000A;  Encabezado de primer nivel&#x000A;&lt;/h1&gt;&#x000A;</code></pre>
-</h3>
+<pre><code>h1, h2, h3 {&#x000A;  font-size: 24px;&#x000A;}</code></pre>
+<p>
+Podemos agrupar selectores separándolos por comas para asignarles los mismos estilos.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;<br>
-&lt;h2&gt;<br>
-&lt;h3&gt;<br>
-&lt;h4&gt;<br>
-&lt;h5&gt;<br>
-&lt;h6&gt;</code>
-</h2>
+<pre><code>h1 {font-size: 24px;}
+h1 {font-size: 20px;}</code></pre>
+<p>
+En caso de dos declaraciones que entran en conflicto (mismo selector, misma propiedad), la declaración posterior prevalece.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;em&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  Podemos dar énfasis <em>a palabras en concreto</em>.&#x000A;&lt;/p&gt;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;strong&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  O bien pdemos dar <strong>importancia</strong>&#x000A;  a palabras en concreto.&#x000A;&lt;/p&gt;&#x000A;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;span&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  El <span class="rojo">span</span>&#x000A;  nos sirve para acotar palabras en concreto.&#x000A;&lt;/p&gt;</code></pre>
+<pre><code>/* Comentario de CSS */</code></pre>
 </section>
 
     </div>
