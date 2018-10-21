@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Etiquetas de texto</title>
+  <title>Color y opacidad</title>
 
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
@@ -29,61 +29,40 @@
   <div class="reveal">
     <div class="slides">
       <section>
-<h1>Etiquetas de texto</h1>
+<h1>Color y opacidad</h1>
 </section>
 <section>
-<h2>
-<code>&lt;p&gt;</code>
-</h2>
+<pre><code>.ejemplo{&#x000A;  color: red;&#x000A;  color: #ff0000;&#x000A;  color: rgb(255, 0, 0);&#x000A;}</code></pre>
+<p>
+Hay varias formas de asignar un color: palabra clave, hexadecimal, <code>rgb()</code>…
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;br&gt;</code>
-</h2>
+<div class='codepen' data-default-tab='css,result' data-height='350' data-slug-hash='QZxBJR' data-theme-id='0' data-user='htmlboy'></div>
+<p>
+Podemos manipular la opacidad o transparencia a través de la propiedad <code>opacity</code> o el canal alfa de <code>rgba()</code>.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;</code>
-</h2>
+<img alt='' src='color-opacidad-content/colorpicker.png'>
+<pre><code>.ejemplo{&#x000A;  color: hsl(302, 100%, 50%);&#x000A;}</code></pre>
+<p>
+El sistema <code>hsl()</code> es otra forma de declarar color que puede resultar más intuitiva.
+</p>
 </section>
 <section>
-<h3>
-<pre><code>&lt;h1&gt;&#x000A;  Encabezado de primer nivel&#x000A;&lt;/h1&gt;&#x000A;</code></pre>
-</h3>
+<pre><code>.ejemplo{&#x000A;  color: hsla(302, 100%, 50%, 0.5);&#x000A;}</code></pre>
+<p>
+El sistema <code>hsla()</code> funciona igual que <code>hsl()</code>, pero con el canal alfa.
+</p>
 </section>
 <section>
-<h2>
-<code>&lt;h1&gt;<br>
-&lt;h2&gt;<br>
-&lt;h3&gt;<br>
-&lt;h4&gt;<br>
-&lt;h5&gt;<br>
-&lt;h6&gt;</code>
-</h2>
-</section>
-<section>
-<h2>
-<code>&lt;em&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  Podemos dar énfasis <em>a palabras en concreto</em>.&#x000A;&lt;/p&gt;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;strong&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  O bien pdemos dar <strong>importancia</strong>&#x000A;  a palabras en concreto.&#x000A;&lt;/p&gt;&#x000A;</code></pre>
-</section>
-<section>
-<h2>
-<code>&lt;span&gt;</code>
-</h2>
-</section>
-<section>
-<pre><code>&lt;p&gt;&#x000A;  El <span class="rojo">span</span>&#x000A;  nos sirve para acotar palabras en concreto.&#x000A;&lt;/p&gt;</code></pre>
+<a href='http://hslpicker.com' target='_blank'>
+<img alt='' src='color-opacidad-content/hslpicker.png'>
+</a>
+<p>
+Puedes probar un editor de colores online en <a href="http://hslpicker.com" target="_blank">hslpicker.com</a>.
+</p>
 </section>
 
     </div>
