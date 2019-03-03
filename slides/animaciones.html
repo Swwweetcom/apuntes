@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Animaciones</title>
+
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../revealjs/css/reveal.css">
+  <link rel="stylesheet" href="../revealjs/css/theme/moon.css">
+  <link href="../stylesheets/slides.css" rel="stylesheet" />
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../revealjs/css/print/pdf.css' :
+      '../revealjs/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+  <body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+<h1>Animaciones</h1>
+</section>
+<section>
+<pre><code>@keyframes miAnimacion{&#x000A;  from{&#x000A;    width: 10px;&#x000A;  }&#x000A;  to{&#x000A;    width: 100px;&#x000A;  }&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>@keyframes miAnimacion{&#x000A;  0%{&#x000A;    width: 10px;&#x000A;  }&#x000A;  50%{&#x000A;    width: 80px;&#x000A;  }&#x000A;  100%{&#x000A;    width: 100px;&#x000A;  }&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s 3;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s infinite;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s 3 linear;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s 3 5s linear;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s linear alternate;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s linear;&#x000A;  animation-fill-mode: forwards;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation: miAnimacion 2s linear;&#x000A;  animation-play-state: running;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation-name: none;&#x000A;  animation-duration: 0s;&#x000A;  animation-timing-function: ease;&#x000A;  animation-delay: 0s;&#x000A;  animation-iteration-count: 1;&#x000A;  animation-direction: normal;&#x000A;  animation-fill-mode: none;&#x000A;  animation-play-state: running;&#x000A;}</code></pre>
+</section>
+<section>
+<pre><code>.elemento{&#x000A;  animation-timing-function: steps(5);&#x000A;}</code></pre>
+</section>
+
+    </div>
+  </div>
+
+  <script src="../revealjs/lib/js/head.min.js"></script>
+  <script src="../revealjs/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [{
+          src: '../revealjs/plugin/markdown/marked.js'
+        },
+        {
+          src: '../revealjs/plugin/markdown/markdown.js'
+        },
+        {
+          src: '../revealjs/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: '../revealjs/plugin/highlight/highlight.js',
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+
+</html>
