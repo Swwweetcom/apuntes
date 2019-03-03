@@ -1,0 +1,113 @@
+---
+title: Animaciones
+layout: layout-slides
+---
+
+%section
+  %h1 Animaciones
+%section
+  %pre
+    %code
+      :preserve
+        @keyframes miAnimacion{
+          from{
+            width: 10px;
+          }
+          to{
+            width: 100px;
+          }
+        }
+%section
+  %pre
+    %code
+      :preserve
+        @keyframes miAnimacion{
+          0%{
+            width: 10px;
+          }
+          50%{
+            width: 80px;
+          }
+          100%{
+            width: 100px;
+          }
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s 3;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s infinite;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s 3 linear;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s 3 5s linear;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s linear alternate;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s linear;
+          animation-fill-mode: forwards;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation: miAnimacion 2s linear;
+          animation-play-state: running;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation-name: none;
+          animation-duration: 0s;
+          animation-timing-function: ease;
+          animation-delay: 0s;
+          animation-iteration-count: 1;
+          animation-direction: normal;
+          animation-fill-mode: none;
+          animation-play-state: running;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          animation-timing-function: steps(5);
+        }

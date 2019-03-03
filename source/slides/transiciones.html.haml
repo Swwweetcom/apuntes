@@ -1,0 +1,55 @@
+---
+title: Transiciones
+layout: layout-slides
+---
+
+%section
+  %h1 Transiciones
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          transition: propiedad duración velocidad;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          transition: background 1s linear;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento.delay{
+          transition: propiedad duración velocidad retraso;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento.delay{
+          transition: background 1s linear 3s;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          transition: background 1s linear;
+                                    ease;
+                                    ease-in;
+                                    ease-out;
+                                    ease-in-out;
+        }
+%section
+  %pre
+    %code
+      :preserve
+        .elemento{
+          transition: background 1s cubic-bezier(.4,.28,.1,.88);
+        }
+  %p
+    Editor online de curvas de velocidad: <a href="http://cubic-bezier.com" target="_blank">cubic-bezier.com</a>

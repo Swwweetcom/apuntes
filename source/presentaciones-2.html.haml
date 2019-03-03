@@ -1,0 +1,37 @@
+---
+title: Apuntes de desarrollo web - HTML, CSS y JS
+description:
+---
+
+.topbar
+  %a.back(href="index.html") Atrás
+  %h1 Presentaciones Segundo Cuantrimestre
+.content-wrapper
+  %p
+    Estas son las presentaciones que hemos visto en clase.
+  %h2 Transforma&shy;ciones, transiciones, animaciones
+  %ul
+    %li
+      %a(href="slides/transformaciones.html" target="_blank")
+        Transformaciones
+        = partial "partials/icon-play"
+    %li
+      %a(href="slides/transiciones.html" target="_blank")
+        Transiciones
+        = partial "partials/icon-play"
+    %li
+      %a(href="slides/animaciones.html" target="_blank")
+        Animaciones
+        = partial "partials/icon-play"
+    %li
+      %a(href="slides/transformaciones3D.html" target="_blank")
+        Transformaciones 3D
+        = partial "partials/icon-play"
+
+
+  -# %h2 Comportamiento: JavaScript
+  -# %ul
+  -#   %li
+  -#     %a(href="slides/js-intro.html" target="_blank")
+  -#       Introducción a JavaScript
+  -#       = partial "partials/icon-play"
